@@ -5,6 +5,7 @@ const path = require('path');
 
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const login = require('./routes/login');
 
 app.use(cookieParser());
 app.use(session({
@@ -26,7 +27,7 @@ app.use(express.json());
 
 
 app.get("/", (req,res) =>{
-    console.log("at home");
+    res.render("login");
 })
 
 
