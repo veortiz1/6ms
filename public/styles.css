@@ -1,0 +1,47 @@
+:root {
+    --fs-xxs: 0.5rem;  
+    --fs-xs: 0.75rem;  
+    --fs-sm: 1rem;     
+    --fs-md: 1.25rem; 
+    --fs-lg: 1.5rem;  
+    --fs-xl: 1.75rem;  
+    --fs-xxl: 2rem;    
+    --fs-xxxl: 2.25rem;
+    --grey-color: #494646;
+    --orange-color: #FF6F00;
+    --page-margin: 4rem;
+  }
+
+  html{
+    font-size: 16px;
+  }
+
+  body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .top_bar{
+    background-color: #494646;
+    width: clamp(18.75rem, 11.719rem + 37.5vw, 46.875rem);
+    max-width: 75rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: var(--page-margin);
+
+
+  }
+
+  .top_bar img{
+
+    width:clamp(3rem, 0.849rem + 3.361vw, 4rem);
+  }
+  
+  
