@@ -25,8 +25,9 @@ app.use(express.json());
 
 
 
-
-
+app.get("/", (req,res) =>{
+    console.log("at home");
+})
 
 
 
