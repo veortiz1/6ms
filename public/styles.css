@@ -43,7 +43,7 @@
 
   .top_bar img,.info_text img{
 
-    width: clamp(2.5rem, 1.5rem + 2.667vw, 4rem);
+    width: clamp(1.75rem, 0.917rem + 2.222vw, 3rem);
   }
 
   .info_text{
@@ -66,6 +66,7 @@
     text-align: left;
     margin: 0;
     padding: 1rem;
+    padding-top: none;
   }
 
 
@@ -90,6 +91,7 @@
     border: none;
     font-family: "Inter", serif;
     border-radius: 1rem;
+    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
   }
   
   #create_group_form{
@@ -108,4 +110,10 @@
     border: none;
     border-bottom: .1rem solid var(--grey-color);
   }
+
+  #search_button_frame,#create_button_frame{
+    margin-bottom: var(--page-margin);
+  }
+
+ 
   

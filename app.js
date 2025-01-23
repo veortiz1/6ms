@@ -6,6 +6,7 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const login = require('./routes/login');
+const client = require('./config/db');
 
 app.use(cookieParser());
 app.use(session({
@@ -26,8 +27,22 @@ app.use(express.json());
 
 
 
-app.get("/", (req,res) =>{
-    res.render("profile");
+app.get("/", async(req,res) =>{
+   
+    try{
+      const db = client.db("chatApp"); // Use (or create) the database
+      const messages = db.collection("messages"); // Reference the collection
+  
+      // Insert a new message (this creates the collection if it doesn't exist)
+      await messages.insertOne({ text: "Hello, world!", timestamp: new Date() });
+      console.log("Added!");
+      res.render("profile");
+
+    }
+    catch(err){
+      console.log(err);
+    }
+
 })
 
 
