@@ -10,6 +10,7 @@
     --grey-color: #494646;
     --orange-color: #FF6F00;
     --page-margin: 4rem;
+    --small-margin:2rem;
   }
 
   html{
@@ -22,11 +23,12 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
+    font-family: "Inter", serif;
   }
 
   .top_bar{
     background-color: #494646;
-    width: clamp(18.75rem, 11.719rem + 37.5vw, 46.875rem);
+    width: clamp(18.75rem, 0rem + 50vw, 46.875rem);
     max-width: 75rem;
     margin-top: 1rem;
     display: flex;
@@ -39,9 +41,71 @@
 
   }
 
-  .top_bar img{
+  .top_bar img,.info_text img{
 
-    width:clamp(3rem, 0.849rem + 3.361vw, 4rem);
+    width: clamp(2.5rem, 1.5rem + 2.667vw, 4rem);
+  }
+
+  .info_text{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+  
+    margin:0;
+    width: clamp(33.75rem, 0rem + 90vw, 84.375rem);
+
+    color: var(--grey-color);
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+  }
+
+  .body_text{
+    color: #494646;
+    font-weight: 300;
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    width: clamp(33.75rem, 0rem + 90vw, 84.375rem);
+    text-align: left;
+    margin: 0;
+    padding: 1rem;
+  }
+
+
+  .orange_highlight{
+    color: var(--orange-color);
+    font-weight: 900;
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+  }
+
+  .space_between{
+    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
+    justify-content: space-between;
+    display: flex;
+  }
+
+  button{
+    background-color: var(--grey-color);
+    color: white;
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    font-weight: 900;
+    padding: 1rem;
+    border: none;
+    font-family: "Inter", serif;
+    border-radius: 1rem;
   }
   
+  #create_group_form{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: var(--small-margin);
+    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
+    
+  }
+
+
+  input{
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    border: none;
+    border-bottom: .1rem solid var(--grey-color);
+  }
   
