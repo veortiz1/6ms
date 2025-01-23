@@ -8,6 +8,8 @@ const cookieParser = require('cookie-parser');
 const login = require('./routes/login');
 const client = require('./config/db');
 
+const register= require('./routes/register');
+
 app.use(cookieParser());
 app.use(session({
     secret: 'your-secret-key', 
@@ -25,6 +27,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use('/login', login);
+app.use('/register', register);
+
 
 
 app.get("/", async(req,res) =>{
@@ -36,7 +41,7 @@ app.get("/", async(req,res) =>{
       // Insert a new message (this creates the collection if it doesn't exist)
       await messages.insertOne({ text: "Hello, world!", timestamp: new Date() });
       console.log("Added!");
-      res.render("profile");
+      res.render("register");
 
     }
     catch(err){
