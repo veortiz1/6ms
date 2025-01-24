@@ -24,7 +24,7 @@ async(req,res) => {
    }   
     const {user,password} = req.body;
     try{
-    const db = mongo.db("chatApp");
+    const db = mongo.db("6ms");
     const users = db.collection("Users");
 
     user_results = await users.findOne({username: user});
@@ -44,7 +44,13 @@ async(req,res) => {
           });
 
         let u_id=result.insertedId;
+        req.session.u_id=result.insertedId;
         console.log("USER ADDED!");
+
+        return res.status(200).json({
+            message: "User Added!",
+          });
+        
 
 
 

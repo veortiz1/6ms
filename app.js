@@ -10,6 +10,8 @@ const client = require('./config/db');
 
 const register= require('./routes/register');
 
+const groups= require('./routes/groups');
+
 app.use(cookieParser());
 app.use(session({
     secret: 'your-secret-key', 
@@ -29,18 +31,14 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/register', register);
+app.use('/groups', groups);
 
 
 
 app.get("/", async(req,res) =>{
    
     try{
-      const db = client.db("chatApp"); // Use (or create) the database
-      const messages = db.collection("messages"); // Reference the collection
-  
-      // Insert a new message (this creates the collection if it doesn't exist)
-      await messages.insertOne({ text: "Hello, world!", timestamp: new Date() });
-      console.log("Added!");
+     
       res.render("register");
 
     }
@@ -52,11 +50,35 @@ app.get("/", async(req,res) =>{
 
 
 
+app.get("/profile", async(req,res) =>{
+   
+  try{
+   
+    console.log(req.session.u_id);
+        res.render("profile");
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+})
+
+
+
+
+
+
+
+
 
 
   app.listen(3000, () => {
     console.log('Server is running on port 3000');
   });
+
+
+  
   
 
 

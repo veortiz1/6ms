@@ -15,10 +15,12 @@ async function register(){
 const data = await response.json();
 
 if(!response.ok){
-
+console.log("Error registering user!");
 }
 else{
-    
+
+    window.location.href = '/profile';
+
 }
 
 
