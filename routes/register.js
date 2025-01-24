@@ -10,8 +10,10 @@ const { body,check, validationResult } = require('express-validator');
 
 
 
-router.post("/",body("user").notEmpty().withMessage("Please Fill out Name field!")
-.matches(/^[A-Za-z0-9 ]+$/).withMessage("Name must only contain letters,numbers,and spaces"),
+router.post("/",body("user").notEmpty().withMessage("Please Fill out Username field!")
+.matches(/^[A-Za-z0-9]+$/).withMessage("Name must only contain letters,numbers"),
+body("password").notEmpty().withMessage("Password cannot be empty!")
+.matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/).withMessage("Password must contain an uppercase,lowercase,number and special character and be 8 characters long!"),
 async(req,res) => {
     console.log("IN REGISTER ROUTER post '/'");
     const errors = validationResult(req); 
@@ -25,11 +27,41 @@ async(req,res) => {
     const db = mongo.db("chatApp");
     const users = db.collection("Users");
 
+    user_results = await users.findOne({username: user});
+    
+    if(user_results){
+        console.log("User exists!");
+        return res.status(404).json({
+            message: "User Exists!",
+          });
+    }
+    else{
+
+        const hashedPassword = await bcrypt.hash(password, 13);
+        const result = await users.insertOne({
+            username: user,
+            password: hashedPassword, 
+          });
+
+        let u_id=result.insertedId;
+        console.log("USER ADDED!");
+
+
+
+        
+
+ 
+    }
+
 
     
     }
     catch(err){
-        cons
+        console.log("Error in Register / post: "+ err);
+        return res.status(400).json({
+            message: "Error in registering user",
+          });
+        
     }
 
 

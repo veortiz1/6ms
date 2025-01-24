@@ -7,12 +7,19 @@ async function register(){
     headers:{
         "Content-Type": "application/json"
     },
-    body: JSON.stringify({name:name,rounds:rounds,time:time,rest:rest,link:link,description:description,token:token})
+    body: JSON.stringify({user:user,password:password})
 
 
 })
 
 const data = await response.json();
+
+if(!response.ok){
+
+}
+else{
+    
+}
 
 
    
