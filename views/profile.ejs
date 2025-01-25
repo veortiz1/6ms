@@ -45,17 +45,20 @@
 
 
     <form id="create_group_form">
+  
         <span class="orange_highlight">Create Group</span>
+
+        <p class="error" id="create_group_error"></p>
       
-        <input type="text" id="name" name="name" placeholder="Name">
+        <input type="text" id="name" name="name" placeholder="Name (20 or less characters)">
   
 
        
-        <input type="text" id="password" name="password"  placeholder="Password">
+        <input type="text" id="password" name="password"  placeholder="Password (20 or less characters)">
     
 
       
-        <input id="text" name="description" placeholder="Description " >
+        <input type="text" id="description" placeholder="Description (50 or less characters)" >
         
 
         <button type="button" onclick="create_group()">Create Group</button>

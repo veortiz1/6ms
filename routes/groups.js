@@ -8,6 +8,60 @@ const { body,check, validationResult } = require('express-validator');
 
 
 
+router.post("/",
+body("name").notEmpty().withMessage("Group Name is requred!")
+.isLength({max: 20}).withMessage("Name has to be less than 20 characters!")
+.matches(/^[A-Za-z0-9 ]+$/).withMessage("Group name must only contain numbers,letters, or spaces."),
+body('password').optional({ checkFalsy: true })
+.isLength({max:20}),
+body("description").optional({checkFalsy: true})
+.isLength({max:50})
+,async(req,res) =>{
+    console.log( " IN GROUPS / post");
+
+    const errors = validationResult(req); 
+    if (!errors.isEmpty()) {
+        console.log("Input validation error!");
+        const firstError = errors.array()[0]; 
+        return res.status(422).json({ error: firstError.msg});
+    }   
+
+    const {name,password,description} = req.body;
+
+    try{
+        const db= mongo.db("6ms");
+        const groups = db.collection("groups");
+        const added = await groups.insertOne({
+            name:name,
+            password:password,
+            description:description,
+            user_id:req.session.u_id
+        });
+
+        console.log("Group Added!");
+
+        return res.status(200).json({
+            message: "Group Made!",
+          });
+
+
+        
+
+    }
+    catch(err){
+        console.log("Error in groups / post: "+ err);
+        return res.status(400).json({
+            message: "Error making groupr",
+          });
+
+    }
+
+
+
+
+
+})
+
 
 
 

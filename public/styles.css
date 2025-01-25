@@ -115,5 +115,19 @@
     margin-bottom: var(--page-margin);
   }
 
+  .error{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .error{
+    display: none;
+  }
+
  
   
