@@ -74,6 +74,7 @@
     color: var(--orange-color);
     font-weight: 900;
     font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    margin: 0;
   }
 
   .space_between{
@@ -134,13 +135,41 @@
     width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: var(--small-margin);
   }
 
   .created_groups_row{
     width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
+  }
+
+
+  .orange_bg{
+    background-color: var(--orange-color);
+    background-color: var(--grey-color);
+    color: white;
+    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
+    font-weight: 900;
+    padding: 1rem;
+    border: none;
+    font-family: "Inter", serif;
+    border-radius: 1rem;
+    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
+    background-color: var(--orange-color);
+    height: auto;
+  }
+
+
+  #created_group_name{
+    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
+   
+  }
+
+  #created_groups{
+    display: none;
   }
 
  
