@@ -129,5 +129,19 @@
     display: none;
   }
 
+
+  #created_groups{
+    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .created_groups_row{
+    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+
  
   

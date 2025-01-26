@@ -46,3 +46,58 @@ catch(err){
     
  
  }
+
+
+
+
+async function get_created_groups(){
+try{
+
+    const response = await fetch("groups/Created_Groups",{
+        method: "get"
+    })
+    
+    const data = await response.json();
+    
+    if(!response.ok){
+    console.log("Error getting groups!!");
+    
+    }
+    
+    else{
+     console.log("Groups Got!");
+     const results = data.results;
+
+     for(let i = 0;i<results.length;i++){
+        let results_frame = document.createElement("div");
+        results_frame.classList.add("created_groups_row");
+        console.log(results[i].name);
+       
+        let results_text = document.createElement("p");
+        results_text.textContent = results[i].name;
+        results_frame.appendChild(results_text);
+
+
+        let edit_group_button = document.createElement("button");
+        edit_group_button.textContent="Edit";
+        results_frame.appendChild(edit_group_button);
+
+        let edit_group_button = document.createElement("button");
+        edit_group_button.textContent="Edit";
+        results_frame.appendChild(edit_group_button);
+     
+        
+        document.getElementById("created_groups").appendChild(results_frame);
+     }
+
+    
+
+
+    }
+}
+catch(err){
+    console.log("Error creating group!" + err);
+}
+ 
+
+ }

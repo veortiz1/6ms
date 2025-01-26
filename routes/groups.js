@@ -63,6 +63,34 @@ body("description").optional({checkFalsy: true})
 })
 
 
+router.get("/Created_Groups",async(req,res) =>{
+    console.log( " IN GROUPS / Created_groups");
+
+    try{
+        const db= mongo.db("6ms");
+        const groups = db.collection("groups");
+
+        const results= await groups.find({user_id:req.session.u_id}).toArray();
+        console.log(results);
+        return res.status(200).json({
+            results: results
+          });
+    }
+    catch(err){
+        return res.status(400).json({
+            message: "Error getting groups"
+          });
+
+    }
+    
+
+  
+
+
+
+})
+
+
 
 
 module.exports=router;
