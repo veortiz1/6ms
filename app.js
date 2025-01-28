@@ -90,11 +90,28 @@ app.get("/view_all", async(req,res) =>{
         let joined_or_not_arr=[];
 
       let all_groups = await groups.find({}).toArray();
-      let joined = await
+      let joined = await joined_groups.find({}).toArray();
     
 
       for(let i = 0; i<all_groups.length;i++){
         console.log(all_groups[i]._id.toString());
+
+        let found=0;
+        for( let j = 0;i<joined.length;j++){
+          if(joined[j].group==all_groups[i]._id.toString()){
+            if(joined[j].u_id==all_groups[i].u_id){
+              found=1;
+            }
+          }
+
+        }
+
+        if(found==1){
+          joined_or_not_arr.push("Joined");
+        }
+        else{
+          joined_or_not_arr.push("Join");
+        }
 
         
 
@@ -106,7 +123,7 @@ app.get("/view_all", async(req,res) =>{
 
       
 
-      res.render("view_all",{all_groups:all_groups});
+      res.render("view_all",{all_groups:all_groups,joined_or_not:joined_or_not_arr});
   }
   catch(err){
     console.log(err);
