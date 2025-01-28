@@ -123,12 +123,36 @@ router.post("/delete", async(req,res) =>{
 })
 
 
-router.post("/",async(req,res)=>{
+router.post("/join",async(req,res)=>{
     let id= req.body.id;
 
     try{
         const db= mongo.db("6ms");
-        const groups = db.collection("groups");
+        const groups = db.collection("groups_joined");
+
+        let results = await groups.find({group:id,u_id:req.session.u_id}).toArray();
+
+        console.log(results);
+
+        if(results.length==0){
+            await groups.insertOne({group:id,u_id:req.session.u_id});
+            console.log("User added to group");
+            return res.status(200).json({
+                message: "User added to group!"
+              });
+
+
+        }
+
+        else{
+
+            console.log("User not added to group");
+            return res.status(400).json({
+                message: "User Exists in group"
+              });
+
+        }
+
 
         
 
@@ -136,6 +160,8 @@ router.post("/",async(req,res)=>{
     }
     catch(err){
         console.log("Error: "+ err);
+
+
 
         return res.status(400).json({
             message: "Error joining group"

@@ -86,8 +86,25 @@ app.get("/view_all", async(req,res) =>{
   try{
     const db= mongo.db("6ms");
         const groups = db.collection("groups");
+        const joined_groups=db.collection("groups_joined");
+        let joined_or_not_arr=[];
 
       let all_groups = await groups.find({}).toArray();
+      let joined = await
+    
+
+      for(let i = 0; i<all_groups.length;i++){
+        console.log(all_groups[i]._id.toString());
+
+        
+
+    
+      }
+      
+
+
+
+      
 
       res.render("view_all",{all_groups:all_groups});
   }
