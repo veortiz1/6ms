@@ -172,6 +172,7 @@ async function delete_group(id,name){
         }
         else{
             console.log("Group is deleted!");
+            get_created_groups();
         }
         
 

@@ -5,6 +5,7 @@ const mongo = require('../config/db');
 const client = require('../config/redis');
 const crypto = require('crypto');
 const { body,check, validationResult } = require('express-validator');
+const { Types } = require('mongoose');
 
 
 
@@ -96,20 +97,25 @@ router.post("/delete", async(req,res) =>{
 
     let id=req.body.id;
 
+    console.log(typeof id);
     try{
         const db= mongo.db("6ms");
         const groups = db.collection("groups");
-        await groups.deleteOne({_id:id});
+        await groups.deleteOne({_id: new Types.ObjectId(id)});
+
+        console.log("Group deleted!");
 
         return res.status(200).json({
-            message: "Error getting groups"
+            message: "Groupe deleted"
           });
 
     }
     catch(err){
 
+        console.log("Error: "+ err);
+
         return res.status(400).json({
-            message: "Error getting groups"
+            message: "Error deleting groups"
           });
 
     }
