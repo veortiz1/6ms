@@ -171,7 +171,7 @@ async function delete_group(id,name){
 
         }
         else{
-            console.log("Group is deleted!")
+            console.log("Group is deleted!");
         }
         
 

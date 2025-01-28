@@ -91,6 +91,31 @@ router.get("/Created_Groups",async(req,res) =>{
 })
 
 
+router.post("/delete", async(req,res) =>{
+    console.log( " IN GROUPS / Delete");
+
+    let id=req.body.id;
+
+    try{
+        const db= mongo.db("6ms");
+        const groups = db.collection("groups");
+        await groups.deleteOne({_id:id});
+
+        return res.status(200).json({
+            message: "Error getting groups"
+          });
+
+    }
+    catch(err){
+
+        return res.status(400).json({
+            message: "Error getting groups"
+          });
+
+    }
+
+})
+
 
 
 module.exports=router;
