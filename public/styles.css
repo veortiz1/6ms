@@ -83,6 +83,12 @@
     display: flex;
   }
 
+  .space_evenly{
+    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
+    justify-content: space-evenly;
+    display: flex;
+  }
+
   button{
     background-color: var(--grey-color);
     color: white;
@@ -131,7 +137,7 @@
   }
 
 
-  #created_groups{
+  #created_groups,#delete_user_frame{
     width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
     display: flex;
     flex-direction: column;
@@ -165,12 +171,26 @@
 
   #created_group_name{
     width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
+    color: #494646;
+    font-weight: 900;
+    font-family: "Inter", serif;
    
   }
 
-  #created_groups{
+  #created_groups,#delete_user_frame{
     display: none;
   }
 
+  #yes{
+    background-color: rgb(83, 223, 83);
+  }
+
+
+  #no{
+    background-color: rgb(253, 79, 79);
+  }
+
+
+ 
  
   

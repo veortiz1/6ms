@@ -73,6 +73,8 @@ try{
 
      document.getElementById("create_group_form").style.display="none";
 
+     document.getElementById("delete_user_frame").style.display="none";
+
      document.getElementById("created_groups").innerHTML = "";
 
      for(let i = 0;i<results.length;i++){
@@ -102,7 +104,7 @@ try{
         delete_group_button.textContent="Delete";
         delete_group_button.classList.add("orange_bg");
         delete_group_button.addEventListener("click", function() {
-            delete_group(results[i]._id);
+            delete_group(results[i]._id,results[i].name);
         });
         results_frame.appendChild(delete_group_button);
      
@@ -127,6 +129,80 @@ async function edit_group(id){
     console.log(id);
 }
 
-async function delete_group(id){
+async function delete_group(id,name){
+
     console.log(id);
+
+    document.getElementById("created_groups").style.display="none";
+
+    document.getElementById("delete_user_frame").style.display="flex";
+
+    document.getElementById("create_group_form").style.display="none";
+
+    document.getElementById("delete_user_frame").innerHTML = "";
+
+
+
+    let delete_title_p = document.createElement("p");
+    delete_title_p.textContent="Delete group "+name+" ?";
+    delete_title_p.classList.add("orange_highlight");
+
+    let button_frame = document.createElement("div");
+    button_frame.classList.add("space_evenly");
+
+    let yes_button=document.createElement("button");
+    yes_button.id="yes";
+    yes_button.textContent="Yes";
+    yes_button.addEventListener("click", async function() {
+        const response = await fetch("/groups/delete",{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({id:id})
+        
+        
+        })
+        
+        const data = await response.json();
+        
+        if(!response.ok){
+        console.log("Error deleting group!");
+
+        }
+        else{
+            console.log("Group is deleted!")
+        }
+        
+
+     });
+ 
+
+
+    let no_button=document.createElement("button");
+    no_button.id="no";
+    no_button.textContent="No";
+    no_button.addEventListener("click", function() {
+       get_created_groups();
+    });
+
+
+    button_frame.appendChild(yes_button);
+    button_frame.appendChild(no_button);
+
+
+
+    document.getElementById("delete_user_frame").appendChild(delete_title_p);
+    document.getElementById("delete_user_frame").appendChild(button_frame);
+
+
+
+
+}
+
+
+function joined_clicked(){
+    document.getElementById("create_group_form").style.display="flex";
+    document.getElementById("created_groups").style.display="none";
+    document.getElementById("delete_user_frame").style.display="none";
 }
