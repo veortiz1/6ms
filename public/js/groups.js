@@ -202,8 +202,40 @@ async function delete_group(id,name){
 }
 
 
+async function join_group(id){
+    console.log(id);
+
+    const response = await fetch("/groups/join",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:id})
+    
+    
+    })
+    
+    const data = await response.json();
+    
+    if(!response.ok){
+    console.log("Error deleting group!");
+
+    }
+    else{
+        console.log("Group is deleted!");
+        get_created_groups();
+    }
+    
+
+}
+
 function joined_clicked(){
     document.getElementById("create_group_form").style.display="flex";
     document.getElementById("created_groups").style.display="none";
     document.getElementById("delete_user_frame").style.display="none";
+}
+
+function view_all(){
+    
+    window.location.href = '/view_all';
 }

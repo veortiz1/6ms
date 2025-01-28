@@ -6,11 +6,12 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const login = require('./routes/login');
-const client = require('./config/db');
+
 
 const register= require('./routes/register');
 
 const groups= require('./routes/groups');
+const mongo = require('./config/db');
 
 app.use(cookieParser());
 app.use(session({
@@ -79,6 +80,22 @@ app.get("/profile", async(req,res) =>{
 
 
   
+
+app.get("/view_all", async(req,res) =>{
+
+  try{
+    const db= mongo.db("6ms");
+        const groups = db.collection("groups");
+
+      let all_groups = await groups.find({}).toArray();
+
+      res.render("view_all",{all_groups:all_groups});
+  }
+  catch(err){
+    console.log(err);
+  }
+
+})
   
 
 

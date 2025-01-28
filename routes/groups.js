@@ -123,5 +123,27 @@ router.post("/delete", async(req,res) =>{
 })
 
 
+router.post("/",async(req,res)=>{
+    let id= req.body.id;
+
+    try{
+        const db= mongo.db("6ms");
+        const groups = db.collection("groups");
+
+        
+
+
+    }
+    catch(err){
+        console.log("Error: "+ err);
+
+        return res.status(400).json({
+            message: "Error joining group"
+          });
+
+    }
+})
+
+
 
 module.exports=router;
