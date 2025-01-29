@@ -24,7 +24,7 @@ async(req,res) => {
    }   
     const {user,password} = req.body;
     try{
-    const db = mongo.db("6ms");
+    const db = mongo.db("frf");
     const users = db.collection("Users");
 
     user_results = await users.findOne({username: user});

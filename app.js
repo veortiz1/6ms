@@ -65,6 +65,12 @@ app.get("/register", async(req,res) =>{
 })
 
 
+app.get("/profile", async(req,res)=>{
+
+  res.render("profile");
+})
+
+
 
 
 
