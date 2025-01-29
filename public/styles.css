@@ -138,8 +138,14 @@
     border-radius: 2rem;
     padding: 1.25rem;
 
+
   }
 
+  #black{
+    color: black;
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-weight: 900;
+  }
   .option_box_title{
     margin: 0;
    
@@ -275,6 +281,14 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
     border-radius: 1rem;
     font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
 
+  }
+
+  .select_exercise_button{
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    border: none;
+    background-color: none;
+    background: none;
+    font-weight: 200;
   }
 
   @media only screen and (max-width: 999px) {

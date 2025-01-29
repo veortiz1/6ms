@@ -92,7 +92,19 @@ app.get("/add_exercise", async(req,res)=>{
 
 app.get("/add_workout", async(req,res)=>{
 
-  res.render("add_workout");
+  try{
+    const db = mongo.db("frf");
+    const exercises= db.collection("Exercises");
+
+    let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
+    res.render("add_workout",{exercises:user_exercises});
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
+
+ 
 })
 
 

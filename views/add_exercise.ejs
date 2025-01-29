@@ -13,7 +13,10 @@
 
     <form action="">
         <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
+        <p class="error" id="error"></p>
+       
         <p class="option_box_title" id="form_title">Add Exercise</p>
+
 
         <input type="text" placeholder="Name" id="name">
         <input type="text" placeholder="Rounds" id="rounds">
@@ -21,7 +24,7 @@
         <input type="text" placeholder="Rest" id="rest">
         <input type="text" placeholder="Tips" id="tips">
 
-        <button type="button" id="form_button">Add Exercise</button>
+        <button type="button" id="form_button" onclick="add_exercise()">Add Exercise</button>
    
 
 

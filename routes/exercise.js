@@ -14,12 +14,12 @@ const { body,check, validationResult } = require('express-validator');
 router.post("/add",
 body("name").notEmpty().withMessage("Please Enter A Name!").
 matches(/^[A-Za-z0-9 ]+$/).withMessage("Name must only contain numbers,letters or spaces!"),
-body("email").optional({ checkFalsy: true }).isEmail().withMessage('Invalid email format'),
-body("phone").optional({ checkFalsy: true }).isInt().withMessage("Please enter only numbers for phone eg.123456677"),
-body("height").optional({ checkFalsy: true }).isFloat().withMessage("Error height must only contain number or decimal!"),
-body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weight must only contain number or decimal!")
+body("rounds").notEmpty().withMessage("Please enter rounds!").isInt().withMessage("Rounds Must be an number!"),
+body("time").notEmpty().withMessage("Please enter time!").isInt().withMessage("Time must be a number!"),
+body("rest").notEmpty().withMessage("Please enter rest!").isInt().withMessage("Rest must be a number!"),
+body("tips").optional({checkFalsy:true})
 ,async(req,res) =>{
-    console.log("In Client Route /add POST");
+    console.log("In exercise Route /add POST");
     let {name,rounds,time,rest,tips} = req.body;
     const errors = validationResult(req); 
     if (!errors.isEmpty()) {
@@ -29,6 +29,27 @@ body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weigh
         return res.status(422).json({ error: firstError.msg});
     }   
 
+    if(!tips){
+        tips="no description!";
+    }
+
+    try{
+        const db = mongo.db("frf");
+        const exercises= db.collection("Exercises");
+        await exercises.insertOne({name:name,rounds:rounds,time:time,rest:rest,tips:tips,u_id:req.session.u_id});
+        return res.status(200).json({
+            message: "Exercise Added!",
+          });
+
+
+    }
+    catch(err){
+        console.log("ERRORL: "+ err);
+        return res.status(400).json({
+            message: "Error adding exercise",
+          });
+
+    }
    
 
 

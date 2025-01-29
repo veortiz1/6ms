@@ -22,7 +22,7 @@ async function add_exercise(){
  const data = await response.json();
  
  if(!response.ok){
-     console.log("Client Not Added!");
+     console.log("Exercise not added!");
      if(data.error){
          document.getElementById("error").style.display="flex";
          document.getElementById("error").innerText=data.error;
