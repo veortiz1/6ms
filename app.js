@@ -13,6 +13,7 @@ const login = require('./routes/login');
 const register= require('./routes/register');
 
 const client= require('./routes/client');
+const exercise = require('./routes/exercise');
 
 const mongo = require('./config/db');
 
@@ -36,6 +37,8 @@ app.use(express.json());
 app.use('/login', login);
 app.use('/register', register);
 app.use('/client', client);
+
+app.use('/exercise', exercise);
 
 
 
