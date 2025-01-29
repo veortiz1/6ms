@@ -8,8 +8,11 @@ const cookieParser = require('cookie-parser');
 const login = require('./routes/login');
 
 
+
+
 const register= require('./routes/register');
 
+const client= require('./routes/client');
 
 const mongo = require('./config/db');
 
@@ -32,6 +35,7 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/register', register);
+app.use('/client', client);
 
 
 
@@ -81,6 +85,13 @@ app.get("/add_exercise", async(req,res)=>{
 
   res.render("add_exercise");
 })
+
+
+app.get("/add_workout", async(req,res)=>{
+
+  res.render("add_workout");
+})
+
 
 
 
