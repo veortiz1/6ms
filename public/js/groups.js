@@ -202,6 +202,65 @@ async function delete_group(id,name){
 }
 
 
+async function joined_groups(){
+
+
+    try{
+        const response = await fetch("groups/Joined_Groups",{
+            method: "get"
+        })
+        
+        const data = await response.json();
+        
+
+        if(!response.ok){
+
+        }
+        else{
+            document.getElementById("created_groups").style.display="none";
+    
+       
+    
+            document.getElementById("create_group_form").style.display="none";
+
+            document.getElementById("joined_group_frame").style.display="flex";
+        
+            document.getElementById("joined_group_frame").innerHTML = "";
+    
+            let joined_groups=data.groups_joined;
+            console.log(joined_groups);
+
+            for(let i=0;i<joined_groups.length;i++){
+
+                let results_frame = document.createElement("div");
+                results_frame.classList.add("created_groups_row");
+               
+               
+                let results_text = document.createElement("p");
+                results_text.textContent = joined_groups[i].name;
+                results_text.classList.add("orange_highlight");
+                results_text.id="created_group_name";
+                results_frame.appendChild(results_text);
+
+
+
+
+            }
+        }
+    
+       
+    }
+    catch(err){
+        console.log(err);
+    }
+   
+
+
+
+
+
+}
+
 async function join_group(id){
     console.log(id);
 

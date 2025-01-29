@@ -147,7 +147,7 @@
   }
 
 
-  #created_groups,#delete_user_frame{
+  #created_groups,#delete_user_frame,#joined_group_frame{
     width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
     display: flex;
     flex-direction: column;
@@ -187,7 +187,7 @@
    
   }
 
-  #created_groups,#delete_user_frame{
+  #created_groups,#delete_user_frame,#joined_group_frame{
     display: none;
   }
 

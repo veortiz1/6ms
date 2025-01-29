@@ -171,5 +171,34 @@ router.post("/join",async(req,res)=>{
 })
 
 
+router.get("/Joined_Groups", async(req,res)=>{
+
+    try{
+        const db= mongo.db("6ms");
+        const groups = db.collection("groups_joined");
+
+        let results =  await groups.find({u_id: req.session.u_id}).toArray();
+
+        return res.status(200).json({
+            groups_joined: results
+          });
+
+
+
+
+
+
+
+    }
+    catch(err){
+        console.log(err);
+        return res.status(400).json({
+            message: "Error Getting Joined groups"
+          });
+    }
+
+})
+
+
 
 module.exports=router;
