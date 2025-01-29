@@ -71,6 +71,19 @@ app.get("/profile", async(req,res)=>{
 })
 
 
+app.get("/add_client", async(req,res)=>{
+
+  res.render("add_client");
+})
+
+
+app.get("/add_exercise", async(req,res)=>{
+
+  res.render("add_exercise");
+})
+
+
+
 
 
 

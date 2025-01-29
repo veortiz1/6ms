@@ -11,12 +11,6 @@
 </head>
 <body>
 
-    <div class="topbar_profile">
-        <p>User: Hotdog1234</p>
-
-       <a href="">Edit Profile</a>
-       <a href="">Logout</a>
-    </div>
 
 
     <section class="option">
@@ -26,7 +20,7 @@
             <p class="option_box_bio">Add or manage clients. </p>
             <p class="option_box_text">You currently have 21 Clients.</p>
            <div class="option_box_buttons">
-            <button>Add Client</button>
+            <button onclick="add_client()">Add Client</button>
             <button>Manage Client</button>
            </div>
 
@@ -37,7 +31,7 @@
             <p class="option_box_bio">Add or manage exercises. </p>
             <p class="option_box_text">You currently have 21 exercises.</p>
            <div class="option_box_buttons">
-            <button>Add Exercise</button>
+            <button onclick="add_exercise()">Add Exercise</button>
             <button>Manage Exercises</button>
            </div>
 
@@ -56,16 +50,22 @@
 
         </div>
 
-        <div class="option_box">
-            <p>title</p>
-            <p>title</p>
-            <p>title</p>
-            <p>title</p>
+        <div class="option_box" id="bg4">
+            <p class="option_box_title">Send Workouts</p>
+            <p class="option_box_bio">Send workouts to clients. </p>
+            <p class="option_box_text">You have sent 21 workouts.</p>
+           <div class="option_box_buttons">
+            <button>Send Workout</button>
+           
+           </div>
+
 
         </div>
     </section>
 
   
+
+    <script src="/js/redirect.js"></script>
 
 </body>
 </html>
