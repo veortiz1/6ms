@@ -91,72 +91,104 @@
     
   }
 
-
-  .navbar{
-    width: clamp(22.5rem, 0rem + 60vw, 56.25rem);
-    background-color: red;
-    border-radius: 1rem;
-  }
-
-  .info{
-    margin: 0;
+  .topbar_profile{
     width: clamp(36rem, 0rem + 96vw, 90rem);
-    font-size: var(--fs-md);
-    font-weight: 400;
-    margin-bottom: var(--small-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .select{
+  .topbar_profile p{
+    font-weight: 900;
+    font-size: var(--fs-lg);
+    margin: 0;
+  }
+
+  .topbar_profile a{
+    color: red;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: var(--fs-lg);
+  }
+
+
+  .option{
+    margin-top: var(--page-margin);
     width: clamp(36rem, 0rem + 96vw, 90rem);
     display: flex;
     flex-wrap: wrap;
+    row-gap: var(--small-margin);
     justify-content: space-between;
   }
 
-  .select_box{
+  .option_box{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    width: clamp(15rem, 9.35rem + 15.067vw, 23.475rem);
-    border: .2rem solid red;
-    border-radius: 1.5rem;
+    justify-content: space-between;
+    width: 45%;
     height: auto;
     aspect-ratio: 1;
+    border: .1rem solid black;
+    background-image: url('/img/bg3.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    padding: 1.25rem;
+
   }
 
-  .select_box_title{
-    display: flex;
-    align-items: center;
-
-  font-size: var(--fs-lg);
-  margin: 0;
-  color: red;
-  font-weight: 900;
-  }
-
-  .select_box img{
-    width: 5rem;
-  }
-
-  .select_box_button{
-    background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border: none;
-    font-size: var(--fs-lg);
-    color: white;
+  .option_box_title{
+    margin: 0;
+   
+    font-size: clamp(3.5rem, 1.5rem + 3.2vw, 4.5rem);
     font-weight: 900;
-    border-radius: 1rem;
+    color: white;
+  }
+
+  .option_box_bio{
+    margin: 0;
+    font-size: clamp(3.5rem, 1.5rem + 3.2vw, 4.5rem);
+    font-weight:400;
+    text-align: center;
+    color: yellow;
+
+  }
+
+  .option_box_text{
+    margin: 0;
+    font-size: clamp(1rem, 0rem + 1.6vw, 1.5rem);
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+  }
+
+
+  .option_box_buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .option_box_buttons button{
+    background-color: yellow;
+    color: black;
+    border: none;
     padding: 1rem;
+    width: 40%;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0rem + 1.6vw, 1.5rem);
+
   }
 
-  .select_box_button img{
-    width: 2rem;
+
+  #bg2{
+    background-image: url('/img/bg2.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
   }
-
-
-
-
+  
  
