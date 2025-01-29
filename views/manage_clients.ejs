@@ -11,34 +11,34 @@
 </head>
 <body>
 
-    <form action="">
-        <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
-        <p class="error"></p>
-        <p class="option_box_title" id="form_title">Add Workout</p>
+    <p class="option_box_title" id="form_title">Manage Clients</p>
 
-        <input type="text" placeholder="Name" id="name">
+    <% for(var i=0;i<clients.length;i++) { %>
+
+        <div class="manage_client_row">
+
+            <p><%= clients[i].name %></p>
+            <p><%= clients[i].email %></p>
+            <p><%= clients[i].phone %></p>
+            <p><%= clients[i].height%></p>
+            <p><%= clients[i].weight%> inches</p>
+
+            <button id="form_button">Edit</button>
+            <button id="back_button">Delete</button>
+
+        </div>
+
+    
+
+        <% } %>
+
         
-        <p class="option_box_bio" id="black">Select Exercises</p>
 
-        <% for(var i =0;i<exercises.length;i++){ %>
-
-            <button id="select_exercise_button_bg_<%= i %>" class="select_exercise_button" onclick=" event.preventDefault(); add_exercise_to_workout('<%= exercises[i]._id %>' , '<%=i%>')"> <%= exercises[i].name %></button>
-
-
-
-
-            <% } %>
-
-        <button type="button" id="form_button" onclick="add_workout()">Add Workout</button>
    
 
-
-    </form>
-
+  
 
     <script src="/js/redirect.js"></script>
 
-    <script src="/js/workouts.js"></script>
-    
 </body>
 </html>

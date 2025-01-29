@@ -14,6 +14,7 @@ const register= require('./routes/register');
 
 const client= require('./routes/client');
 const exercise = require('./routes/exercise');
+const workout = require('./routes/workout');
 
 const mongo = require('./config/db');
 
@@ -39,6 +40,8 @@ app.use('/register', register);
 app.use('/client', client);
 
 app.use('/exercise', exercise);
+
+app.use('/workout', workout);
 
 
 
@@ -106,6 +109,24 @@ app.get("/add_workout", async(req,res)=>{
 
  
 })
+
+app.get("/manage_client", async(req,res)=>{
+
+  try{
+    const db = mongo.db("frf");
+    const Clients= db.collection("Clients");
+
+    let user_clients = await Clients.find({u_id:req.session.u_id}).toArray();
+    res.render("manage_clients",{clients:user_clients});
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
+
+ 
+})
+
 
 
 

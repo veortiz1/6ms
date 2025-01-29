@@ -15,3 +15,8 @@ function go_back(){
     window.location.href = '/profile';
 
 }
+
+function manage_client(){
+    window.location.href = '/manage_client';
+
+}

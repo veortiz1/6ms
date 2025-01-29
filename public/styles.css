@@ -56,8 +56,6 @@
     text-decoration: none;
   }
 
-  
-
   .logo{
     margin: 0;
     font-family: "Keania One", serif;
@@ -291,6 +289,19 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
     font-weight: 200;
   }
 
+  .manage_client_row{
+    display: flex;
+    width: clamp(36rem, 0rem + 96vw, 90rem);
+   
+    justify-content: space-evenly;
+  }
+
+  .manage_client_row p{
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-weight: 900;
+   
+  }
+
   @media only screen and (max-width: 999px) {
     .option{
        display: flex;
@@ -314,10 +325,4 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
         font-size: clamp(2rem, 0.283rem + 9.156vw, 6rem);
 
       }
-
-    
-    
-
-
-
   }
