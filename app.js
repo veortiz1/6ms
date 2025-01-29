@@ -10,7 +10,7 @@ const login = require('./routes/login');
 
 const register= require('./routes/register');
 
-const groups= require('./routes/groups');
+
 const mongo = require('./config/db');
 
 app.use(cookieParser());
@@ -32,7 +32,7 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/register', register);
-app.use('/groups', groups);
+
 
 
 
@@ -40,7 +40,7 @@ app.get("/", async(req,res) =>{
    
     try{
      
-      res.render("register");
+      res.render("home");
 
     }
     catch(err){
@@ -51,12 +51,11 @@ app.get("/", async(req,res) =>{
 
 
 
-app.get("/profile", async(req,res) =>{
+app.get("/register", async(req,res) =>{
    
   try{
    
-    console.log(req.session.u_id);
-        res.render("profile");
+    res.render("register");
 
   }
   catch(err){
@@ -80,32 +79,4 @@ app.get("/profile", async(req,res) =>{
 
 
   
-
-app.get("/view_all", async(req,res) =>{
-
-  try{
-    const db= mongo.db("6ms");
-        const groups = db.collection("groups");
-        const joined_groups=db.collection("groups_joined");
-        let joined_or_not_arr=[];
-
-      let all_groups = await groups.find({}).toArray();
-
-    
-
-     
-
-
-
-      
-
-      res.render("view_all",{all_groups:all_groups});
-  }
-  catch(err){
-    console.log(err);
-  }
-
-})
-  
-
 

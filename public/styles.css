@@ -26,193 +26,67 @@
     font-family: "Inter", serif;
   }
 
-  .top_bar{
-    background-color: #494646;
-    width: clamp(18.75rem, 0rem + 50vw, 46.875rem);
-    max-width: 75rem;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: var(--page-margin);
 
-
-  }
-
-  .top_bar img,.info_text img{
-
-    width: clamp(1.75rem, 0.917rem + 2.222vw, 3rem);
-  }
-
-  .info_text{
-    display: flex;
-    align-items: center;
-    font-weight: 300;
-  
-    margin:0;
-    width: clamp(33.75rem, 0rem + 90vw, 84.375rem);
-
-    color: var(--grey-color);
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-  }
-
-  .body_text{
-    color: #494646;
-    font-weight: 300;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    width: clamp(33.75rem, 0rem + 90vw, 84.375rem);
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-    text-align: left;
-    margin: 0;
-    padding: 1rem;
-    padding-top: none;
-  }
-
-
-  .orange_highlight{
-    color: var(--orange-color);
-    font-weight: 900;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    margin: 0;
-  }
-
-  .description{
-    color: var(--grey-color);
-    font-weight: 200;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    margin: 0;
-    max-width: 20ch;  
-
-  }
-
-  .space_between{
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-    justify-content: space-between;
-    display: flex;
-  }
-
-  .space_evenly{
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-    justify-content: space-evenly;
-    display: flex;
-  }
-
-  button{
-    background-color: var(--grey-color);
-    color: white;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    font-weight: 900;
-    padding: 1rem;
-    border: none;
-    font-family: "Inter", serif;
-    border-radius: 1rem;
-    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
-  }
-  
-  #create_group_form{
-   
+  .top_bar_frame{
+    width: 100vw;
+    background-color: black;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    gap: var(--small-margin);
-    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
+    align-items: center;
+ 
+  }
+
+  .top_bar{
+    width: clamp(36rem, 0rem + 96vw, 90rem);
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .login_buttons_frame{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+
+  .login_buttons_frame a{
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  
+
+  .logo{
+    margin: 0;
+    font-family: "Keania One", serif;
+    font-size: var(--fs-xxxl);
+    color: white;
+    font-weight: 900;
+    padding: 1rem;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  #red{
+    color:red;
+  }
+
+  .title{
+    width: clamp(36rem, 0rem + 96vw, 90rem);
+    display: flex;
+  
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 900;
     
   }
-
-
-  input{
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    border: none;
-    border-bottom: .1rem solid var(--grey-color);
-  }
-
-  #search_button_frame,#create_button_frame{
-    margin-bottom: var(--page-margin);
-  }
-
-  .error{
-    display: flex;
-    width: 100%;
-    text-align: center;
-    color: red;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    font-weight: 400;
-    margin: 0;
-  }
-
-  .error{
-    display: none;
-  }
-
-
-  #created_groups,#delete_user_frame,#joined_group_frame{
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--small-margin);
-  }
-
-  .created_groups_row{
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-    display: flex;
-    justify-content: space-between;
-
-  }
-
-
-  .orange_bg{
-    background-color: var(--orange-color);
-    background-color: var(--grey-color);
-    color: white;
-    font-size: clamp(1rem, 0.667rem + 0.889vw, 1.5rem);
-    font-weight: 900;
-    padding: 1rem;
-    border: none;
-    font-family: "Inter", serif;
-    border-radius: 1rem;
-    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
-    background-color: var(--orange-color);
-    height: auto;
-  }
-
-
-  #created_group_name{
-    width: clamp(9.375rem, 0rem + 25vw, 23.438rem);
-    color: #494646;
-    font-weight: 900;
-    font-family: "Inter", serif;
-   
-  }
-
-  #created_groups,#delete_user_frame,#joined_group_frame{
-    display: none;
-  }
-
-  #yes{
-    background-color: rgb(83, 223, 83);
-  }
-
-
-  #no{
-    background-color: rgb(253, 79, 79);
-  }
-
-
-
-  .view_all{
-    width: clamp(35.625rem, 3.125rem + 86.667vw, 84.375rem);
-   
-    display: flex;
-    flex-direction: column;
-    gap: var(--small-margin);
-  }
-
-  
-
-
  
- 
-  
