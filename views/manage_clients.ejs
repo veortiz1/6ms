@@ -9,28 +9,58 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Concert+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Kadwa:wght@400;700&family=Keania+One&family=Lacquer&family=Londrina+Solid:wght@100;300;400;900&family=Luckiest+Guy&family=Miriam+Libre:wght@400..700&family=Monda:wght@400..700&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="black_body">
 
-    <p class="option_box_title" id="form_title">Manage Clients</p>
+    
+
+    <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
+    <br>
+
+
+
+    <div class="table_container">
+    <table>
+       
+
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+
+        </tr>
 
     <% for(var i=0;i<clients.length;i++) { %>
 
-        <div class="manage_client_row">
+      
 
-            <p><%= clients[i].name %></p>
-            <p><%= clients[i].email %></p>
-            <p><%= clients[i].phone %></p>
-            <p><%= clients[i].height%></p>
-            <p><%= clients[i].weight%> inches</p>
 
-            <button id="form_button">Edit</button>
-            <button id="back_button">Delete</button>
 
-        </div>
+        <tr>
+            <td><%= clients[i].name %></td>
+            <td><%= clients[i].email %></td>
+            <td><%= clients[i].phone %></td>
+            <td><%= clients[i].height %></td>
+            <td><%= clients[i].weight %> inches</td>
+            <td>
+                <button >Edit</button>
+            </td>
+            <td>
+                <button id="red" >Delete</button>
+            </td>
+        </tr>
 
     
 
         <% } %>
+
+    </table>
+
+</div>
 
         
 

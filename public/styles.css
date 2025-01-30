@@ -289,18 +289,125 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
     font-weight: 200;
   }
 
-  .manage_client_row{
-    display: flex;
+  table{
+ width: 100%;
     width: clamp(36rem, 0rem + 96vw, 90rem);
-   
-    justify-content: space-evenly;
+  }
+  tr,th{
+    text-align: center;
+    
   }
 
-  .manage_client_row p{
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-weight: 900;
+  .table_container{
+  
+    display: flex;
+    width: 65vw;
+
+    overflow: scroll;
+    border: .2rem solid black;
+    border-radius: 1rem;
+    
    
+
+ 
   }
+
+  
+
+
+ 
+
+  table{
+ 
+    width: 100%;
+    margin: 0;
+   
+  
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+   
+
+
+  
+    
+  }
+  tr{
+    width: 98vw;
+    max-width: 91.875rem;
+    margin: 0;
+    background-color:rgb(42, 42, 42);
+   
+    
+  }
+  
+  th{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: "Inter", serif;
+    font-weight: 900;
+    text-align: center;
+  
+ 
+    padding: 1rem;
+ 
+    background-color: yellow;
+    color: black;
+    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+    font-size: 1rem;
+    background-color: black;
+    color: yellow;
+   
+    font-size: 1.5rem;
+    border-top: .1rem solid yellow;
+    background-color: yellow;
+    color: black;
+    border-bottom: .2rem solid black;
+  }
+  
+ 
+  
+  
+  td{
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    text-align: center;
+    font-style: italic;
+    max-width: 15ch;
+    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+    padding: 1rem;
+    color: yellow;
+    font-size: 1rem;
+
+
+  }
+
+  td button{
+    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+  
+    color: black;
+    font-weight: 900;
+    border: none;
+    padding: 1rem;
+    font-family: "Inter", serif;
+    border-radius: 1rem;
+      font-size: 1rem;
+      background:none;
+      color: yellow;
+      text-decoration: underline;
+  }
+
+  #red{
+    color: red;
+  }
+  
+
+
+
+
 
   @media only screen and (max-width: 999px) {
     .option{
@@ -325,4 +432,24 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
         font-size: clamp(2rem, 0.283rem + 9.156vw, 6rem);
 
       }
+  }
+
+
+  @media only screen and (max-width: 1200px) {
+
+    .table_container{
+  
+        display: flex;
+        width: 90vw;
+    
+        overflow: scroll;
+        border: .2rem solid black;
+        border-radius: 1rem;
+        
+       
+    
+     
+      }
+    
+
   }
