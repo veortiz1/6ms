@@ -129,6 +129,48 @@ app.get("/manage_client", async(req,res)=>{
 
 
 
+app.get("/manage_exercise", async(req,res)=>{
+ 
+
+  try{
+    const db = mongo.db("frf");
+    const Exercises= db.collection("Exercises");
+
+    let user_exercises= await Exercises.find({u_id:req.session.u_id}).toArray();
+    res.render("manage_exercises",{exercises:user_exercises});
+  
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
+
+ 
+})
+
+
+app.get("/manage_workout", async(req,res)=>{
+ 
+
+  try{
+    const db = mongo.db("frf");
+    const Exercises= db.collection("Workouts");
+
+    let user_exercises= await Exercises.find({u_id:req.session.u_id}).toArray();
+    res.render("manage_workout",{workouts:user_exercises});
+  
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
+
+ 
+})
+
+
+
+
 
 
 

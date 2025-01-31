@@ -20,3 +20,13 @@ function manage_client(){
     window.location.href = '/manage_client';
 
 }
+
+function manage_exercise(){
+    window.location.href = '/manage_exercise';
+
+}
+
+function manage_workout(){
+    window.location.href = '/manage_workout';
+
+}
