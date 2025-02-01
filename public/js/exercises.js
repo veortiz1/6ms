@@ -33,3 +33,51 @@ async function add_exercise(){
  }
  
 }
+
+
+async function edit_exercise(){
+    let name=document.getElementById("name").value;
+    let rounds = document.getElementById("rounds").value;
+    let time = document.getElementById("time").value;
+    let rest = document.getElementById("rest").value;
+    let tips = document.getElementById("tips").value;
+ 
+
+    const response = await fetch("/exercise/edit",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({name:name,rounds:rounds,time:time,rest:rest,tips:tips})
+    
+    
+    })
+
+    if(response.ok){
+       
+
+    }
+
+}
+
+
+async function set_eid(id,option){
+
+    const response = await fetch("/exercise/set_eid",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:id})
+    
+    
+    })
+
+    if(response.ok){
+        if(parseInt(option)==1){
+            window.location.href = '/edit_exercise';
+        }
+
+    }
+
+}

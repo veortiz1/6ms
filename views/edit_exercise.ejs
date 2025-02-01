@@ -11,63 +11,31 @@
 </head>
 <body id="black_body">
 
-    <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
-    <br>
-
-
-
-    <div class="table_container">
-    <table>
+    <form action="">
+        <button type="button" id="back_button" class="red" onclick="manage_exercise()">Go Back</button>
+        <p class="error" id="error"></p>
        
-
-        <tr>
-            <th>Name</th>
-            <th>Rounds</th>
-            <th>Time</th>
-            <th>Rest</th>
-            <th>Tips</th>
-            <th>Edit</th>
-            <th>Delete</th>
-
-
-        </tr>
-
-    <% for(var i=0;i<exercises.length;i++) { %>
-
-      
+        <p class="option_box_title" id="form_title">Edit Exercise</p>
+        <p class="tip">*If you dont want to edit a field, leave it blank and it will remain unchanged.</p>
 
 
 
-        <tr>
-            <td><%= exercises[i].name %></td>
-            <td><%= exercises[i].rounds %></td>
-            <td><%= exercises[i].time %></td>
-            <td><%= exercises[i].rest %></td>
-            <td><%= exercises[i].tips %></td>
-            <td>
-                <button onclick="set_eid('exercises[i]._id','1')" >Edit</button>
-            </td>
-            <td>
-                <button id="red" >Delete</button>
-            </td>
-        </tr>
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Rounds" id="rounds">
+        <input type="text" placeholder="Time" id="time">
+        <input type="text" placeholder="Rest" id="rest">
+        <input type="text" placeholder="Tips" id="tips">
 
-    
-
-        <% } %>
-
-    </table>
-
-</div>
-
-        
-
+        <button type="button" id="form_button" onclick="edit_exercise()">Add Exercise</button>
    
 
-  
+
+    </form>
+
+
+
 
     <script src="/js/redirect.js"></script>
-  
 
     <script src="/js/exercises.js"></script>
 

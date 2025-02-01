@@ -186,6 +186,11 @@ app.get("/delete_client",async(req,res)=>{
 
 
 
+app.get("/edit_exercise",async(req,res) =>{
+
+  res.render("edit_exercise",{e_id:req.session.e_id});
+
+})
 
 
 
