@@ -16,6 +16,9 @@ function go_back(){
 
 }
 
+
+
+
 function manage_client(){
     window.location.href = '/manage_client';
 

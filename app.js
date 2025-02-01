@@ -169,6 +169,20 @@ app.get("/manage_workout", async(req,res)=>{
 })
 
 
+app.get("/edit_client",async(req,res)=>{
+
+  res.render("edit_client");
+
+})
+
+app.get("/delete_client",async(req,res)=>{
+
+  res.render("delete_client",{c_id:req.session.c_id});
+
+})
+
+
+
 
 
 

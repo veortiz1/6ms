@@ -11,64 +11,36 @@
 </head>
 <body id="black_body">
 
-    
-
-    <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
-    <br>
-
-
-
-    <div class="table_container">
-    <table>
-       
-
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Edit</th>
-            <th>Delete</th>
-
-
-        </tr>
-
-    <% for(var i=0;i<clients.length;i++) { %>
-
+    <form action="">
+        <button type="button" id="back_button" class="red" onclick="manage_client()">Go Back</button>
       
+        <p class="option_box_title" id="form_title">Edit Client</p>
+
+        <p class="tip">*If you dont want to edit a field, leave it blank and it will remain unchanged.</p>
+
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Email" id="email">
+        <input type="text" placeholder="Phone" id="phone">
+        <input type="text" placeholder="Height" id="height">
+        <input type="text" placeholder="Weight" id="weight">
+
+        <button type="button" id="form_button" onclick="edit_client()">Save Changes</button>
+
+        <p class="error" id="error"></p>
+   
 
 
+    </form>
 
-        <tr>
-            <td><%= clients[i].name %></td>
-            <td><%= clients[i].email %></td>
-            <td><%= clients[i].phone %></td>
-            <td><%= clients[i].height %></td>
-            <td><%= clients[i].weight %> inches</td>
-            <td>
-                <button onclick="set_client_id('<%= clients[i]._id %>','1')">Edit</button>
-            </td>
-            <td>
-                <button id="red"  onclick="set_client_id('<%= clients[i]._id %>','2')">Delete</button>
-            </td>
-        </tr>
-
-    
-
-        <% } %>
-
-    </table>
-
-</div>
-
-        
 
    
 
-  <script src="/js/clients.js"></script>
+
+
 
     <script src="/js/redirect.js"></script>
+
+    <script src="/js/clients.js"></script>
 
 </body>
 </html>

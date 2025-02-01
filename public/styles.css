@@ -187,11 +187,15 @@
 
   }
   .error,#error{
-    width: 50%;
+   
     color: red;
     font-size: 1rem;
     text-align: center;
     display: flex;
+    margin: 0;
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-weight: 900;
+
   }
 
   .error,#error{
@@ -235,11 +239,15 @@
     margin: 0;
   
     font-size: clamp(2.5rem, 2rem + 2.667vw, 4.5rem);
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
   }
   input{
 border: none;
 border-bottom: .2rem solid black;
 font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
   }
 
   #form_button{
@@ -254,6 +262,19 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
     border-radius: 1rem;
 
     font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
+  }
+
+  .tip{
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
+    font-weight: 200;
+    color: rgb(68, 66, 66);
+    margin: 0;
+    
+
+    text-align: center;
+    
+    font-weight: 700;
   }
 
   #back_button{
@@ -274,6 +295,7 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
     border-radius: 0;
     border-radius: 1rem;
     font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
 
   }
 
@@ -403,6 +425,42 @@ font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
 
   #red{
     color: red;
+  }
+
+  .yes{
+    background-color: rgb(92, 200, 38);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1rem;
+  
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: .1rem solid black;
+    border-radius: 1rem;
+
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
+    border: none;
+    max-width: 28rem;
+    width: 30vw;
+  }
+
+  .no{
+    background-color: rgb(255, 84, 84);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1rem;
+  
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: .1rem solid black;
+    border-radius: 1rem;
+
+    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
+    border: none;
+    width: 30vw;
+    max-width: 28rem;
   }
   
 
