@@ -207,12 +207,15 @@ app.get("/edit_workout",async(req,res) =>{
 
   try{
     const db = mongo.db("frf");
-    const Exercises= db.collection("Workouts");
-    console.log("hi");
-    console.log(req.session.w_id+" id");
+    const Workouts= db.collection("Workouts");
+    const exercises= db.collection("Exercises");
+
+    let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
+
+
     let normal_id = new ObjectId(req.session.w_id);
-    let result = await Exercises.findOne({_id:normal_id});
-    res.render("edit_workout",{workout:result});
+    let result = await Workouts.findOne({_id:normal_id});
+    res.render("edit_workout",{workout:result,add_exercise:user_exercises});
 
   }
   catch(err){

@@ -85,3 +85,8 @@ async function edit_workout(id){
     }
 
 }
+
+async function remove_exercise(index,array){
+    console.log(array);
+
+}
