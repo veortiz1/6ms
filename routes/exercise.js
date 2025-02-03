@@ -95,7 +95,7 @@ body("time").optional({checkFalsy:true}).isInt().withMessage("Time must be a num
 body("rest").optional({checkFalsy:true}).isInt().withMessage("Rest must be a number!"),
 body("tips").optional({checkFalsy:true})
 ,async(req,res) =>{
-    console.log("In exercise Route /add POST");
+    console.log("In exercise Route /edit POST");
     let {name,rounds,time,rest,tips} = req.body;
     const errors = validationResult(req); 
     if (!errors.isEmpty()) {
@@ -108,9 +108,11 @@ body("tips").optional({checkFalsy:true})
     try{
         const db = mongo.db("frf");
         const exercises= db.collection("Exercises");
+        console.log("E_ID "+req.session.e_id);
         const normal_id = new ObjectId(req.session.e_id);
+        console.log("Normal id"+normal_id);
 
-        let results= await exercises.find({_id:normal_id});
+        let results= await exercises.findOne({_id:normal_id});
 
         if(results){
             if(!name){
@@ -153,6 +155,24 @@ body("tips").optional({checkFalsy:true})
    
 
 
+})
+
+
+router.post("/delete", async(req,res) =>{
+    let id = req.body.id;
+
+
+    try{
+        
+
+    }
+    catch(err){
+        console.log(err);
+        return res.status(400).json({
+            message: "Exercise not edited",
+          });
+
+    }
 })
 
 

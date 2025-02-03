@@ -45,7 +45,7 @@
             <td><%= exercises[i].rest %></td>
             <td><%= exercises[i].tips %></td>
             <td>
-                <button onclick="set_eid('exercises[i]._id','1')" >Edit</button>
+                <button onclick="set_eid('<%-exercises[i]._id%>','1')" >Edit</button>
             </td>
             <td>
                 <button id="red" >Delete</button>
