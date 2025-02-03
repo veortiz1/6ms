@@ -60,3 +60,28 @@ async function add_workout(){
     }
 
 }
+
+async function edit_workout(id){
+  
+
+    const response = await fetch("/workout/set_wid",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:id})
+    
+    
+    })
+
+    const data = await response.json();
+
+    if(!response.ok){
+      
+        
+    }
+    else{
+        window.location.href = '/edit_workout';
+    }
+
+}

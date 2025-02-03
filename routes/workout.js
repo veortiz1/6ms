@@ -5,6 +5,7 @@ const mongo = require('../config/db');
 const client = require('../config/redis');
 const crypto = require('crypto');
 const { body,check, validationResult } = require('express-validator');
+const { ObjectId } = require('mongodb');
 
 
 
@@ -31,8 +32,20 @@ async(req,res) => {
 
     const db = mongo.db("frf");
     const workouts = db.collection("Workouts");
+    const exercises_db = db.collection("Exercises");
 
-    await workouts.insertOne({name:name,exercises:exercises,u_id:req.session.u_id});
+    exercise_arr=[];
+ 
+    for(let i=0;i<exercises.length;i++){
+      let normal_id = new ObjectId(exercises[i]);
+      let result= await exercises_db.findOne({_id:normal_id});
+      exercise_arr.push(result);
+
+    }
+
+
+
+    await workouts.insertOne({name:name,exercises:exercise_arr,u_id:req.session.u_id});
 
     return res.status(200).json({
         message: "Workout  added "
@@ -52,6 +65,27 @@ async(req,res) => {
 
 })
 
+
+router.post("/set_wid", async(req,res) =>{
+
+  try{
+    let id=req.body.id;
+    req.session.w_id=id;
+    console.log(req.session.w_id);
+    return res.status(200).json({
+      message: "Workout  id set "
+    });
+  }
+  catch(err){
+    return res.status(400).json({
+      message: "Workout id not set "+err,
+    });
+  }
+
+
+  
+
+})
 
 
 module.exports=router;

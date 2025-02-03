@@ -77,7 +77,31 @@ async function set_eid(id,option){
         if(parseInt(option)==1){
             window.location.href = '/edit_exercise';
         }
+        else{
+            window.location.href = '/delete_exercise';
+        }
+    }
 
+}
+
+
+
+async function delete_exercise(id){
+
+    const response = await fetch("/exercise/delete",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:id})
+    
+    
+    })
+
+    if(response.ok){
+      
+            window.location.href = '/manage_exercise';
+      
     }
 
 }

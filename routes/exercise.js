@@ -159,17 +159,32 @@ body("tips").optional({checkFalsy:true})
 
 
 router.post("/delete", async(req,res) =>{
+
+    console.log("In exercise /delete");
     let id = req.body.id;
 
 
     try{
+
+        const db = mongo.db("frf");
+        const exercises= db.collection("Exercises");
+        const normal_id = new ObjectId(req.session.e_id);
+
+
+        await exercises.deleteOne({_id:normal_id});
+        return res.status(200).json({
+            message: "Exercise Deleted",
+          });
         
+
+
+
 
     }
     catch(err){
         console.log(err);
         return res.status(400).json({
-            message: "Exercise not edited",
+            message: "Exercise not deleted",
           });
 
     }

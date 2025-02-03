@@ -17,6 +17,8 @@ const exercise = require('./routes/exercise');
 const workout = require('./routes/workout');
 
 const mongo = require('./config/db');
+const { ObjectId } = require('mongodb');
+
 
 app.use(cookieParser());
 app.use(session({
@@ -192,8 +194,34 @@ app.get("/edit_exercise",async(req,res) =>{
 
 })
 
+app.get("/delete_exercise",async(req,res)=>{
+
+  res.render("delete_exercise",{e_id:req.session.e_id});
+
+})
 
 
+
+
+app.get("/edit_workout",async(req,res) =>{
+
+  try{
+    const db = mongo.db("frf");
+    const Exercises= db.collection("Workouts");
+    console.log("hi");
+    console.log(req.session.w_id+" id");
+    let normal_id = new ObjectId(req.session.w_id);
+    let result = await Exercises.findOne({_id:normal_id});
+    res.render("edit_workout",{workout:result});
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+  
+
+})
 
 
 
