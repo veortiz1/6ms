@@ -87,6 +87,37 @@ router.post("/set_wid", async(req,res) =>{
 
 })
 
+router.post("/remove_exercise", async(req,res) =>{
+
+  let {exercises,w_id} = req.body;
+
+  try{
+    const db = mongo.db("frf");
+    const workouts = db.collection("Workouts");
+    console.log("wid "+w_id);
+    const normal_id = new ObjectId(w_id);
+
+    await workouts.updateOne( {_id:normal_id},
+      {$set:{exercises:exercises}}
+      );
+
+    
+
+
+    return res.status(200).json({
+      message: "Exercise deleted",
+    });
+
+  }
+  catch(err){
+      console.log(err);
+      return res.status(400).json({
+          message: "Exercise not deleted",
+        });
+  }
+
+})
+
 
 module.exports=router;
 

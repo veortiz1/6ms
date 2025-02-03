@@ -86,7 +86,26 @@ async function edit_workout(id){
 
 }
 
-async function remove_exercise(index,array){
+async function remove_exercise(index,array,w_id){
+    if (typeof array === "string") {
+        array = JSON.parse(array);
+    }
     console.log(array);
+    array.splice(index, 1);
+    console.log(array);
+
+    const response = await fetch("/workout/remove_exercise",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({exercises:array,w_id:w_id})
+    
+    
+    })
+
+    if(response.ok){
+        location.reload();
+    }
 
 }

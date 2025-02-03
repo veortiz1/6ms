@@ -37,7 +37,7 @@
                 <td><%= workout.exercises[i].rounds %></td>
                 <td><%= workout.exercises[i].tips %></td>
                 <td>
-                    <button id="red"   onclick="remove_exercise('<%=i%>','workout.exercises')">Remove</button>
+                    <button id="red"   onclick="remove_exercise('<%=i%>','<%=JSON.stringify(workout.exercises)%>','<%=workout._id%>')">Remove</button>
                 </td>
 
         </tr>
@@ -55,7 +55,7 @@
 
     <script src="/js/redirect.js"></script>
 
-    <script src="workouts.js"></script>
+    <script src="/js/workouts.js"></script>
 
 </body>
 </html>
