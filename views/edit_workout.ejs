@@ -16,6 +16,11 @@
 
    
         <p>workout name <%=workout.name%></p>
+
+        <input type="text" id="name" placeholder="Edit Name">
+        <button type="button" id="form_button" onclick="edit_name('<%=workout._id%>')">Edit Name</button>
+
+        
         <div class="table_container"> 
         <table>
           <th>Name</th>
@@ -48,6 +53,43 @@
     </table>
 
 </div>
+
+
+<div class="table_container"> 
+    <table>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Rest</th>
+        <th>Rounds</th>
+        <th>Tips</th>
+        <th>Add</th>
+
+        <%for(var i = 0;i<add_exercise.length;i++){%>
+
+            <tr>
+            <td><%=add_exercise[i].name%></td>
+            <td><%=add_exercise[i].time%></td>
+            <td><%=add_exercise[i].rest%></td>
+            <td><%=add_exercise[i].rounds%></td>
+        
+            <td><%=add_exercise[i].tips%></td>
+
+            <td>
+                <button id="green"   onclick="add_exercise('<%=add_exercise[i]._id%>','<%=workout._id%>')">Add</button>
+            </td>
+
+            
+        
+
+            </tr>
+
+        <%}%>
+    </table>
+</div>
+
+
+
+
 
 
      

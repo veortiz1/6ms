@@ -11,50 +11,28 @@
 </head>
 <body id="black_body">
 
-    <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
+    <form action="">
+      
+        <p class="option_box_title" id="form_title">Delete Exercise</p>
+
+        <p class="tip">*Click yes to confirm you want to delete this exercise, click no to cancel.</p>
+
+        <button type="button" class="yes"  onclick="delete_workout()">Yes</button>
+        <button type="button" class="no"  onclick="manage_workout()">No</button>
 
 
-
-    <div class="table_container" id="workouts_container">
-    <table>
-    <tr>
-        <th>Name</th>
-        <th>Edit</th>
-        <th>Delete</th>
-
-
-    </tr>
-
-
-    <%for(var i=0;i<workouts.length;i++){ %>
-
-        <tr>
-            <td><%= workouts[i].name %></td>
-       
-            <td>
-                <button onclick="edit_workout('<%=workouts[i]._id%>')">Edit</button>
-            </td>
-            <td>
-                <button id="red" onclick="set_wid('<%=workouts[i]._id%>')">Delete</button>
-            </td>
-        </tr>
-
-
-            
-
-        <% } %>
-
-    </table>
-
-</div>
-        
-   
    
 
-  
+
+    </form>
+
+
+   
+
+
+
 
     <script src="/js/redirect.js"></script>
-  
 
     <script src="/js/workouts.js"></script>
 

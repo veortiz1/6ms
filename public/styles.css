@@ -427,6 +427,10 @@ font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
     color: red;
   }
 
+  #green{
+    color: rgb(63, 227, 63);
+  }
+
   .yes{
     background-color: rgb(92, 200, 38);
     color: rgb(0, 0, 0);

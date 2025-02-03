@@ -1,4 +1,5 @@
 let exercises= [ ];
+let wid;
 
 
 
@@ -107,5 +108,64 @@ async function remove_exercise(index,array,w_id){
     if(response.ok){
         location.reload();
     }
+
+}
+
+async function add_exercise(id,w_id){
+
+    const response = await fetch("/workout/add_exercise",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:id,w_id:w_id})
+    })
+
+    if(response.ok){
+        location.reload();
+    }
+}
+
+
+async function edit_name(w_id){
+    let name=document.getElementById("name").value;
+    const response = await fetch("/workout/edit_name",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({name:name,w_id:w_id})
+    })
+
+    if(response.ok){
+        location.reload();
+    }
+
+    
+
+}
+
+async function set_wid(w_id){
+    const response = await fetch("/workout/set_wid",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:w_id})
+    })
+    if(response.ok){
+        window.location.href = '/delete_workout';
+    }
+}
+
+async function delete_workout(){
+
+    const response = await fetch("/workout/delete_workout",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({id:w_id})
+    })
 
 }

@@ -119,6 +119,83 @@ router.post("/remove_exercise", async(req,res) =>{
 })
 
 
+router.post("/add_exercise", async(req,res) =>{
+
+  let {id,w_id} = req.body;
+
+  try{
+    const normal_id = new ObjectId(id);
+    const workout_id = new ObjectId(w_id);
+    const db = mongo.db("frf");
+    const workouts = db.collection("Workouts");
+    const exercises = db.collection("Exercises");
+
+    let result= await exercises.findOne({_id:normal_id});
+
+    let result1 = await workouts.findOne({_id:workout_id});
+
+    console.log(result1.exercises);
+
+    let temp_arr=result1.exercises;
+
+    temp_arr.push(result);
+
+    await workouts.updateOne( {_id:workout_id},
+      {$set:{exercises:temp_arr}}
+      );
+
+
+      return res.status(200).json({
+        message: "Exercise  added",
+      });
+
+
+    
+
+  
+
+
+
+
+  }
+  catch(err){
+    console.log(err);
+    return res.status(400).json({
+      message: "Exercise not added",
+    });
+  }
+
+})
+
+router.post("/edit_name", async(req,res) =>{
+
+  let {name,w_id} = req.body;
+
+
+
+  try{
+    const workout_id = new ObjectId(w_id);
+    const db = mongo.db("frf");
+    const workouts = db.collection("Workouts");
+       await workouts.updateOne( {_id:workout_id},
+      {$set:{name:name}}
+      );
+      return res.status(200).json({
+        message: "Name edited",
+      });
+
+  }
+  catch(err){
+    console.log(err);
+    return res.status(400).json({
+      message: "Name not edited",
+    });
+
+  }
+
+
+})
+
 module.exports=router;
 
 

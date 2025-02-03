@@ -227,6 +227,11 @@ app.get("/edit_workout",async(req,res) =>{
 })
 
 
+app.get("/delete_workout",async(req,res) =>{
+  res.render("delete_workout");
+
+})
+
 
 
 
