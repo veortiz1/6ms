@@ -164,8 +164,11 @@ async function delete_workout(){
         method: "POST",
         headers:{
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({id:w_id})
+        }
     })
+
+    if(response.ok){
+        window.location.href = '/manage_workout';
+    }
 
 }

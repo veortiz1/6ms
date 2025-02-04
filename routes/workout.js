@@ -196,6 +196,29 @@ router.post("/edit_name", async(req,res) =>{
 
 })
 
+
+router.post("/delete_workout", async(req,res) =>{
+
+  try{
+    const workout_id = new ObjectId(req.session.w_id);
+    const db = mongo.db("frf");
+    const workouts = db.collection("Workouts");
+    await workouts.deleteOne({_id:workout_id})
+    return res.status(200).json({
+      message: "Workout  deleted!",
+    });
+
+
+  }
+  catch(err){
+    console.log(err);
+    return res.status(400).json({
+      message: "Workout not deleted!",
+    });
+  }
+
+})
+
 module.exports=router;
 
 
