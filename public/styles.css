@@ -27,492 +27,106 @@
   }
 
 
-  .top_bar_frame{
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-  }
-
   .top_bar{
-    width: clamp(36rem, 0rem + 96vw, 90rem);
-
     display: flex;
-    justify-content: space-between;
-  }
-
-  .login_buttons_frame{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-
-  .login_buttons_frame a{
-    color: white;
-    font-weight: 900;
-    text-decoration: none;
-  }
-
-  .logo{
-    margin: 0;
-    font-family: "Keania One", serif;
-    font-size: var(--fs-xxxl);
-    color: white;
-    font-weight: 900;
+    width: 50%;
+    max-width: 46.875rem;
+    background-color: black;
     padding: 1rem;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
 
-  #red{
-    font-weight: 900;
-    color:red;
-  }
-
-  .title{
-    width: clamp(36rem, 0rem + 96vw, 90rem);
-    display: flex;
-  
-    font-size: 3rem;
-    margin: 0;
-    font-weight: 900;
+    border-radius: 1.5rem;
     
   }
 
-  .topbar_profile{
-    width: clamp(36rem, 0rem + 96vw, 90rem);
+  .top_bar_box{
+    width: 33.33%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+
   }
 
-  .topbar_profile p{
-    font-weight: 900;
-    font-size: var(--fs-lg);
-    margin: 0;
+  #top_bar_logo{
+   
+    width: clamp(4rem, 1.714rem + 4.571vw, 6rem);
+    height: clamp(4rem, 1.714rem + 4.571vw, 6rem);
+    height: 4rem;
+    width: 4rem;
+  
   }
 
-  .topbar_profile a{
-    color: red;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: var(--fs-lg);
+  .top_bar a img{
+   width:clamp(2rem, -0.286rem + 4.571vw, 4rem);
+   width: 2.5rem;
   }
 
-
-  .option{
-    margin-top: var(--page-margin);
-    margin-bottom: var(--page-margin);
-    width: clamp(36rem, 0rem + 96vw, 90rem);
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: var(--small-margin);
+  #top_left_right_box{
     justify-content: space-between;
   }
 
-  .option_box{
+  .top_bar button{
+    font-family: "Inter", serif;
+    background-color: white;
+    font-size:clamp(0.7rem, 0.357rem + 0.686vw, 1rem);
+    border: none;
+    font-weight: 900;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: .75rem;
+   
+  }
+
+  .box_frame{
+    width: 98%;
+    max-width: 91.875rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .box{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 45%;
+    justify-content: space-evenly;
+    width: 32%;
     height: auto;
     aspect-ratio: 1;
-    border: .1rem solid black;
-    background-image: url('/img/bg3.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    border-radius: 2rem;
-    padding: 1.25rem;
-
-
+    background-color: rgb(255, 255, 255);
+    border: .2rem solid black;
+    border-radius: 1.5rem;
   }
 
-  #black{
-    color: black;
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-weight: 900;
+
+  @media (max-width: 800px) {
+  .top_bar{
+    width: 85%;
   }
-  .option_box_title{
-    margin: 0;
+
+  #top_bar_logo{
    
-    font-size: clamp(3.5rem, 1.5rem + 3.2vw, 4.5rem);
-    font-weight: 900;
-    color: white;
-  }
-
-  .option_box_bio{
-    margin: 0;
-    font-size: clamp(3.5rem, 1.5rem + 3.2vw, 4.5rem);
-    font-weight:400;
-    text-align: center;
-    color: yellow;
-
-  }
-
-  .option_box_text{
-    margin: 0;
-    font-weight: 900;
-    color: rgb(255, 255, 255);
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-  }
-
-
-  .option_box_buttons{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .option_box_buttons button{
-    background-color: yellow;
-    color: black;
-    border: none;
-    padding: 1rem;
-    width: 40%;
-    font-size: 1.5rem;
-    font-weight: 900;
-    border-radius: 2rem;
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-
-  }
-  .error,#error{
    
-    color: red;
-    font-size: 1rem;
-    text-align: center;
-    display: flex;
-    margin: 0;
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-weight: 900;
-
+    height: 3rem;
+    width: 3rem;
+  
   }
 
-  .error,#error{
-    display: none;
+  .top_bar a img{
+
+   width: 2rem;
+  }
+
+  .top_bar button{
+    font-size: .5rem;
   }
 
 
 
-  #bg2{
-    background-image: url('/img/bg2.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-  }
 
+
+
+
+
+
+  }
  
-  #bg3{
-    background-image: url('/img/bg1.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-  }
-
-  #bg4{
-    background-image: url('/img/bg4.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-  }
-
-  form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:var(--small-margin)
-  }
-
-  #form_title{
-    color: black;
-    text-align: center;
-    margin: 0;
-  
-    font-size: clamp(2.5rem, 2rem + 2.667vw, 4.5rem);
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-  }
-  input{
-border: none;
-border-bottom: .2rem solid black;
-font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
-font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-  }
-
-  #form_button{
-    background-color: rgb(0, 0, 0);
-    color: yellow;
-    border: none;
-    padding: 1rem;
-  
-    font-size: 1.5rem;
-    font-weight: 900;
-    border: .1rem solid black;
-    border-radius: 1rem;
-
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-  }
-
-  .tip{
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-    font-weight: 200;
-    color: rgb(68, 66, 66);
-    margin: 0;
-    
-
-    text-align: center;
-    
-    font-weight: 700;
-  }
-
-  #back_button{
-    margin-top: var(--small-margin);
-    background-color: rgb(252, 67, 67);
-    color: black;
-    border: none;
-    padding: 1rem;
-  
-    font-size: 1.5rem;
-    font-weight: 900;
-    border-radius: 2rem;
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
- 
-    
-    font-size: clamp(1.5rem, 0.503rem + 1.597vw, 2rem);
-   
-    border-radius: 0;
-    border-radius: 1rem;
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-
-  }
-
-  .select_exercise_button{
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    border: none;
-    background-color: none;
-    background: none;
-    font-weight: 200;
-  }
-
-  table{
- width: 100%;
-    width: clamp(36rem, 0rem + 96vw, 90rem);
-  }
-  tr,th{
-    text-align: center;
-    
-  }
-
-  .table_container{
-  
-    display: flex;
-    width: 65vw;
-
-    overflow: scroll;
-    border: .1rem solid black;
-    border-radius: 1rem;
-    
-   
-
- 
-  }
-
-  
-
-
- 
-
-  table{
- 
-    width: 100%;
-    margin: 0;
-   
-  
-    border-collapse: collapse;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-   
-
-
-  
-    
-  }
-  tr{
-    width: 98vw;
-    max-width: 91.875rem;
-    margin: 0;
-    
-   
-   
-    
-  }
-  
-  th{
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    font-family: "Inter", serif;
-    font-weight: 400;
-    text-align: center;
-  
- 
-    padding: 1rem;
- 
-    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
-    font-size: 1rem;
-   
-   
-    font-size: 1.5rem;
-  
-
-    color: rgb(71, 70, 70);
-    border-bottom: .1rem solid black;
-    font-size: 1rem;
-    background-color: black;
-    color: yellow;
-  }
-  
- 
-  
-  
-  td{
-    margin: 0;
-    padding: 0;
-    font-weight: 900;
-    text-align: center;
-    font-style: italic;
-    max-width: 15ch;
-    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
-    padding: 1rem;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    border-top: .1rem solid black;
-    font-size: .8rem;
- 
-
-
-  }
-
-  td button{
-    font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
-  
-    color: rgb(179, 255, 57);
-    font-weight: 900;
-    border: none;
-    padding: 1rem;
-    font-family: "Inter", serif;
-    border-radius: 1rem;
-      font-size: 1rem;
-      background:none;
-      color: rgb(255, 197, 37);
-      font-size: .8rem;
-     
-  }
-
-  #red{
-    color: red;
-  }
-
-  #green{
-    color: rgb(63, 227, 63);
-  }
-
-  .yes{
-    background-color: rgb(92, 200, 38);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 1rem;
-  
-    font-size: 1.5rem;
-    font-weight: 900;
-    border: .1rem solid black;
-    border-radius: 1rem;
-
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-    border: none;
-    max-width: 28rem;
-    width: 30vw;
-  }
-
-  .no{
-    background-color: rgb(255, 84, 84);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 1rem;
-  
-    font-size: 1.5rem;
-    font-weight: 900;
-    border: .1rem solid black;
-    border-radius: 1rem;
-
-    font-size: clamp(0.9rem, -0.3rem + 1.92vw, 1.5rem);
-    font-size: clamp(0.9rem, 0.7rem + 1.067vw, 1.7rem);
-    border: none;
-    width: 30vw;
-    max-width: 28rem;
-  }
-  
-
-
-
-
-
-  @media only screen and (max-width: 999px) {
-    .option{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       width: clamp(18rem, 0rem + 96vw, 59.94rem);
-      }
-
-    .option_box{
-        width: 85%;
-      }
-
-      .option_box_buttons button,.option_box_text{
-     
-        font-size: clamp(0.5rem, 0.071rem + 2.289vw, 1.5rem);
-    
-      }
-     
-
-      .option_box_title,.option_box_bio{
-        font-size: clamp(2rem, 0.283rem + 9.156vw, 6rem);
-
-      }
-  }
-
-
-  @media only screen and (max-width: 1200px) {
-
-    .table_container{
-  
-        display: flex;
-        width: 90vw;
-    
-        overflow: scroll;
-        border: .2rem solid black;
-        border-radius: 1rem;
-        
-       
-    
-     
-      }
-    
-
-  }
