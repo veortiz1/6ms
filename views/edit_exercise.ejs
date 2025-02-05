@@ -11,11 +11,26 @@
 </head>
 <body id="black_body">
 
+    <div class="top_bar">
+        <div class="top_bar_box" id="top_left_right_box">
+          
+
+        </div>
+        <div class="top_bar_box">
+            <img src="/icons/logo.png" alt="" id="top_bar_logo">
+        </div>
+        <div class="top_bar_box" id="top_left_right_box">
+            <a href=""> <img src="/icons/profile_.png" alt=""></a>
+          
+            <a href=""> <img src="/icons/help.png" alt=""></a>
+            <a href=""> <img src="/icons/logout.png" alt=""></a>
+            
+        </div>
+    </div>
+
     <form action="">
         <button type="button" id="back_button" class="red" onclick="manage_exercise()">Go Back</button>
-        <p class="error" id="error"></p>
-       
-        <p class="option_box_title" id="form_title">Edit Exercise</p>
+ 
         <p class="tip">*If you dont want to edit a field, leave it blank and it will remain unchanged.</p>
 
 
@@ -26,7 +41,9 @@
         <input type="text" placeholder="Rest" id="rest">
         <input type="text" placeholder="Tips" id="tips">
 
-        <button type="button" id="form_button" onclick="edit_exercise()">Add Exercise</button>
+        <button type="button" id="form_button" onclick="edit_exercise()">Save Changes</button>
+
+        <p class="error" id="error"></p>
    
 
 

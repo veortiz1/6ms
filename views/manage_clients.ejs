@@ -11,6 +11,23 @@
 </head>
 <body id="black_body">
 
+    <div class="top_bar">
+        <div class="top_bar_box" id="top_left_right_box">
+          
+
+        </div>
+        <div class="top_bar_box">
+            <img src="/icons/logo.png" alt="" id="top_bar_logo">
+        </div>
+        <div class="top_bar_box" id="top_left_right_box">
+            <a href=""> <img src="/icons/profile_.png" alt=""></a>
+          
+            <a href=""> <img src="/icons/help.png" alt=""></a>
+            <a href=""> <img src="/icons/logout.png" alt=""></a>
+            
+        </div>
+    </div>
+
     
 
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
@@ -47,7 +64,7 @@
             <td><%= clients[i].height %></td>
             <td><%= clients[i].weight %> inches</td>
             <td>
-                <button onclick="set_client_id('<%= clients[i]._id %>','1')"><img src="/icons/trash.png" alt=""></button>
+                <button onclick="set_client_id('<%= clients[i]._id %>','1')"><img src="/icons/pencil.png" alt=""></button>
             </td>
             <td>
                 <button id="red"  onclick="set_client_id('<%= clients[i]._id %>','2')"><img src="/icons/trash.png" alt=""></button>
