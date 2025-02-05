@@ -411,6 +411,7 @@
       margin: 0;
       display: flex;
       align-items: center;
+      text-align: center;
      
   
     }
@@ -421,13 +422,14 @@
     .view_frame{
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 90%;
       align-items: center;
       gap: 1rem;
       padding: 1rem;
  
       margin-bottom: 1rem;
       border-radius: .5rem;
+    
     
     }
     .sets_frame{
@@ -481,6 +483,18 @@
       padding: .5rem;
       color: white;
       border-radius: .5rem;
+    
+    }
+
+    select{
+      width: 30%;
+      border: .25rem solid black;
+      background-color: white;
+      
+    }
+
+    #send_body{
+      gap: 1rem;
     }
 
 
