@@ -233,6 +233,42 @@ app.get("/delete_workout",async(req,res) =>{
 })
 
 
+app.get("/send_workout",async(req,res) =>{
+
+  try{
+    const db = mongo.db("frf");
+    const Workouts= db.collection("Workouts");
+    let workout =await Workouts.find({u_id:req.session.u_id}).toArray();
+
+    res.render("send_workout",{workout:workout});
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+})
+
+
+
+app.get("/view_workout",async(req,res) =>{
+  let workoutId = req.query.id;
+
+  try{
+    const db = mongo.db("frf");
+    const Workouts= db.collection("Workouts");
+    let workout =await Workouts.findOne({u_id:req.session.u_id});
+
+    res.render("view_workout",{workout:workout});
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+})
+
+
 
 
 

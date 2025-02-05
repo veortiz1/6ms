@@ -32,12 +32,14 @@
 
 
    
-        <p>workout name <%=workout.name%></p>
+        <p class="workout_name"><span class="workout_span">Workout Name: </span><%=workout.name%></p>
 
         <input type="text" id="name" placeholder="Edit Name">
+        <br>
         <button type="button" id="form_button" onclick="edit_name('<%=workout._id%>')">Edit Name</button>
 
-        
+        <br>
+        <p class="tip">This table is the current exercises in this workout, you can remove workouts, or change the order.</p>
         <div class="table_container"> 
         <table>
           <th>Name</th>
@@ -59,7 +61,7 @@
                 <td><%= workout.exercises[i].rounds %></td>
                 <td><%= workout.exercises[i].tips %></td>
                 <td>
-                    <button id="red"   onclick="remove_exercise('<%=i%>','<%=JSON.stringify(workout.exercises)%>','<%=workout._id%>')">Remove</button>
+                    <button id="red"   onclick="remove_exercise('<%=i%>','<%=JSON.stringify(workout.exercises)%>','<%=workout._id%>')"><img src="/icons/subtract.png" alt=""></button>
                 </td>
 
         </tr>
@@ -72,6 +74,12 @@
 </div>
 
 
+<div class="space">
+
+</div>
+
+
+<p class="tip">This table is used to add workouts to the table above, click the plus to add exercise to the current workout.</p>
 
 
 <div class="table_container"> 
@@ -105,6 +113,8 @@
         <%}%>
     </table>
 </div>
+
+<br>
 
 
 

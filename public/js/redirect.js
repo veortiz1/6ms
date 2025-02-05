@@ -33,3 +33,7 @@ function manage_workout(){
     window.location.href = '/manage_workout';
 
 }
+
+function send_workout(){
+    window.location.href = '/send_workout';
+}
