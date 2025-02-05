@@ -257,7 +257,9 @@ app.get("/view_workout",async(req,res) =>{
   try{
     const db = mongo.db("frf");
     const Workouts= db.collection("Workouts");
-    let workout =await Workouts.findOne({u_id:req.session.u_id});
+    const normal_id = new ObjectId(workoutId);
+    let workout =await Workouts.findOne({_id:normal_id});
+    console.log(workout);
 
     res.render("view_workout",{workout:workout});
 

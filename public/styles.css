@@ -391,6 +391,104 @@
       border: none;
     }
 
+    .exercise_text{
+      font-size: 1.25rem;
+      text-align: center;
+      font-weight: 900;
+    
+      margin: 0;
+    }
+
+    .view_name{
+      font-size: 1.25rem;
+      font-weight: 900;
+
+    }
+
+    .view_text{
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin: 0;
+      display: flex;
+      align-items: center;
+     
+  
+    }
+    .view_text img{
+      width: 1.25rem;
+    }
+
+    .view_frame{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+ 
+      margin-bottom: 1rem;
+      border-radius: .5rem;
+    
+    }
+    .sets_frame{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      row-gap: 1rem; 
+      justify-content: space-evenly;
+
+     
+      
+    }
+
+    .sets_frame p{
+      background-color: rgb(18, 213, 0);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+    #name_text{
+      background-color: rgb(245, 93, 93);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+    #rounds_text{
+      background-color: rgb(75, 125, 241);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+    #time_text{
+      background-color: rgb(21, 200, 96);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+    #rest_text{
+      background-color: rgb(249, 110, 23);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+    #notes{
+      background-color: rgb(151, 57, 252);
+      padding: .5rem;
+      color: white;
+      border-radius: .5rem;
+    }
+
+
+
+
+
+
+
 
   
    
