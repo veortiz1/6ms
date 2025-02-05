@@ -29,12 +29,12 @@
 
   .top_bar{
     display: flex;
-    width: 60%;
-    max-width: 46.875rem;
+  width: 96vw;
     background-color: black;
-    padding: 1rem;
+  
+    padding: 2vw;
 
-    border-radius: 1.5rem;
+  
     margin-bottom: var(--small-margin);
     
   }
@@ -105,6 +105,7 @@
     font-size: 1.25rem;
     font-weight: 600;
   }
+ 
   .box button{
 
     font-size: 1.25rem;
@@ -116,8 +117,60 @@
     color: white;
     border-radius: 1rem;
     border: none;
+    padding: .25rem;
 
   }
+
+
+  #back_button{
+    font-size: 1.25rem;
+    font-family: "Inter", serif;
+    background-color: rgb(255, 0, 0);
+    font-weight: 600;
+    padding: 1REM;
+
+  
+    color: white;
+    border-radius: 1rem;
+    border: none;
+
+  }
+
+  #form_button{
+    font-size: 1.25rem;
+    font-family: "Inter", serif;
+    background-color: rgb(0, 0, 0);
+    font-weight: 600;
+
+  
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    padding:1rem;
+
+  }
+
+
+
+  input{
+    font-size: 1.25rem;
+    border: none;
+    border-bottom: .2rem solid black;
+    
+  }
+  input::placeholder {
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 900;
+  
+  }
+  .error{
+    margin: 0;
+    font-size: 1.25rem;
+    color: red;
+    font-weight: 900;
+  }
+
  .box img{
  width: 4rem;
   }
@@ -128,31 +181,180 @@
 
 
   .section_title{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0;
     display: flex;
-   width: 98%;
-   justify-content: left;
+    
+ 
    margin-bottom: var(--small-margin);
    font-weight: 900;
    color: #000000;
    max-width: 91.875rem;
    margin-top: var(--small-margin);
+ 
+ color: black;
+ text-decoration: underline;
+   padding: 1rem;
+   border-radius: 1.5rem;
+
+
+
   }
 
-  .count_text{
-    font-size: 1.25rem;
-    background-color: black;
-    color: white;
-    padding: 2rem;
-    border-radius: 2rem;
-    font-weight: 600;
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--small-margin);
+    
   }
+
+
+
+  #bold{
+    font-weight: 900;
+  }
+
+  table{
+    width: 100%;
+       width: clamp(36rem, 0rem + 96vw, 90rem);
+     }
+     tr,th{
+       text-align: center;
+       
+     }
+   
+     .table_container{
+     
+       display: flex;
+       width: 65vw;
+   
+       overflow: scroll;
+       border: .1rem solid black;
+       border-radius: 1rem;
+       
+      
+   
+    
+     }
+   
+     
+   
+   
+    
+   
+     table{
+    
+       width: 100%;
+       margin: 0;
+      
+     
+       border-collapse: collapse;
+       font-size: 1rem;
+       margin: 0;
+       padding: 0;
+      
+   
+   
+     
+       
+     }
+     tr{
+       width: 98vw;
+       max-width: 91.875rem;
+       margin: 0;
+       
+      
+      
+       
+     }
+     
+     th{
+       margin: 0;
+       padding: 0;
+       text-align: left;
+       font-family: "Inter", serif;
+       font-weight: 400;
+       text-align: center;
+     
+    
+       padding: 1rem;
+    
+       font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+       font-size: 1rem;
+      
+      
+       font-size: 1.5rem;
+     
+   
+       color: rgb(71, 70, 70);
+       border-bottom: .1rem solid black;
+       font-size: 1rem;
+       background-color: black;
+       color: rgb(255, 255, 255);
+     }
+     
+    
+     
+     
+     td{
+       margin: 0;
+       padding: 0;
+       font-weight: 900;
+       text-align: center;
+       font-style: italic;
+       max-width: 15ch;
+       font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+       padding: 1rem;
+       color: rgb(0, 0, 0);
+       font-size: 1rem;
+       border-top: .1rem solid black;
+       font-size: .8rem;
+    
+   
+   
+     }
+   
+     td button{
+       font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+     
+       color: rgb(179, 255, 57);
+       font-weight: 900;
+       border: none;
+       padding: 1rem;
+       font-family: "Inter", serif;
+       border-radius: 1rem;
+         font-size: 1rem;
+         background:none;
+         color: rgb(255, 197, 37);
+         font-size: .8rem;
+        
+     }
+     td button img{
+      width: 1.25rem;
+     }
+
+     .table_container{
+  
+      display: flex;
+      width: 65vw;
+  
+      overflow: scroll;
+      border: .1rem solid black;
+      border-radius: 1rem;
+      
+     
+  
+   
+    }
+  
+   
 
 
   @media (max-width: 800px) {
   .top_bar{
-    width: 85%;
+    width: 100%;
   }
 
   #top_bar_logo{
@@ -169,8 +371,24 @@
   }
 
   .top_bar button{
-    font-size: .5rem;
+    font-size: .75rem;
   }
+
+
+  .box_frame{
+
+    width: 98%;
+    max-width: 91.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--small-margin);
+  }
+
+
+
+
+
 
 
 

@@ -47,10 +47,10 @@
             <td><%= clients[i].height %></td>
             <td><%= clients[i].weight %> inches</td>
             <td>
-                <button onclick="set_client_id('<%= clients[i]._id %>','1')">Edit</button>
+                <button onclick="set_client_id('<%= clients[i]._id %>','1')"><img src="/icons/trash.png" alt=""></button>
             </td>
             <td>
-                <button id="red"  onclick="set_client_id('<%= clients[i]._id %>','2')">Delete</button>
+                <button id="red"  onclick="set_client_id('<%= clients[i]._id %>','2')"><img src="/icons/trash.png" alt=""></button>
             </td>
         </tr>
 
