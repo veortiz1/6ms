@@ -270,6 +270,29 @@ app.get("/view_workout",async(req,res) =>{
 
 })
 
+app.get("/view_plan",async(req,res) =>{
+  let clientId = req.query.id;
+  console.log(clientId);
+  try{
+
+    const db = mongo.db("frf");
+    const Workouts= db.collection("Plans");
+
+   
+
+    res.render("view_plan",{workout:workout,client:client});
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+
+
+ 
+
+})
+
 
 app.get("/create_plan",async(req,res)=>{
 
@@ -297,9 +320,13 @@ app.get("/send_plan", async(req,res) =>{
 
 try{
   const db = mongo.db("frf");
-  const Workouts= db.collection("Workouts");
+
   const Clients= db.collection("Clients");
-  const Plans= db.collection("Plans");
+
+  let client =await Clients.find({u_id:req.session.u_id}).toArray();
+  res.render("send_plan",{client:client});
+
+
 
 }
 catch(err){

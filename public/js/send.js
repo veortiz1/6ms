@@ -11,6 +11,18 @@ function get_link(){
     
 }
 
+
+function get_plan_link(){
+    let id=document.getElementById("options").value;
+
+    let link="http://localhost:3000/view_plan?id="+id;
+
+    document.getElementById("link").innerText=link;
+    document.getElementById("link").href=link;
+
+    
+}
+
 async function add_plan(){
     let id= document.getElementById("options").value;
     let monday = document.getElementById("monday").value;
