@@ -23,6 +23,11 @@ function get_plan_link(){
     
 }
 
+async function view_day(id){
+    window.location.href = `/view_workout?id=${id}`;
+
+}
+
 async function add_plan(){
     let id= document.getElementById("options").value;
     let monday = document.getElementById("monday").value;

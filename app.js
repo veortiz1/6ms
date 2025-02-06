@@ -276,11 +276,14 @@ app.get("/view_plan",async(req,res) =>{
   try{
 
     const db = mongo.db("frf");
-    const Workouts= db.collection("Plans");
+    const Plans= db.collection("Plans");
+
+    let plan= await Plans.findOne({c_id:clientId});
+
 
    
 
-    res.render("view_plan",{workout:workout,client:client});
+    res.render("view_plan",{plan:plan});
 
   }
   catch(err){

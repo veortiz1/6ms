@@ -151,6 +151,26 @@
 
   }
 
+  #no_bg{
+    background: none;
+    color: black;
+    margin: 0;
+  }
+
+  #weekday_button{
+    font-size: 1.25rem;
+    font-family: "Inter", serif;
+    background-color: rgb(0, 0, 0);
+    font-weight: 600;
+
+  
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    padding:1rem;
+    width: 9.375rem;
+  }
+
 
 
   input{

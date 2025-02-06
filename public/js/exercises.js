@@ -52,10 +52,21 @@ async function edit_exercise(){
     
     
     })
+    const data = await response.json();
 
     if(response.ok){
        
+        document.getElementById("error").style.display="flex";
+        document.getElementById("error").innerText="Exercise edited!";
+        document.getElementById("error").style.color="green";
 
+    }
+    else{
+        if(data.error){
+            document.getElementById("error").style.display="flex";
+            document.getElementById("error").innerText=data.error;
+            document.getElementById("error").style.color="red";
+        }
     }
 
 }
