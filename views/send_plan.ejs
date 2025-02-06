@@ -30,26 +30,9 @@
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
     <br>
     <br>
+    
 
-    <p class="tip">Which Workout do you want to send?</p>
-    <select id="options" name="options">
-    <% for(var i=0;i<workout.length;i++){ %>
-     
-     <option value="<%=workout[i]._id%>"><%=workout[i].name%></option>
-   
-        <%}%>
-
-    </select>
-
-    <button onclick="get_link()"id="form_button">Get Link</button>
-
-    <p class="tip">Your Link:</p>
-
-    <a class="link" id="link" href="#"></a>
-
-
-    <script src="/js/send.js"></script>
-    <script src="/js/redirect.js"></script>
+    
     
 </body>
 </html>

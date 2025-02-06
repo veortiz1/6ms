@@ -271,6 +271,44 @@ app.get("/view_workout",async(req,res) =>{
 })
 
 
+app.get("/create_plan",async(req,res)=>{
+
+  try{
+    const db = mongo.db("frf");
+    const Workouts= db.collection("Workouts");
+    const Clients= db.collection("Clients");
+
+    let workout =await Workouts.find({u_id:req.session.u_id}).toArray();
+    let client =await Clients.find({u_id:req.session.u_id}).toArray();
+    console.log(workout);
+
+    res.render("create_plan",{workout:workout,client:client});
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+
+})
+
+
+app.get("/send_plan", async(req,res) =>{
+
+try{
+  const db = mongo.db("frf");
+  const Workouts= db.collection("Workouts");
+  const Clients= db.collection("Clients");
+  const Plans= db.collection("Plans");
+
+}
+catch(err){
+  console.log(err);
+}
+
+})
+
+
 
 
 

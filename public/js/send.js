@@ -10,3 +10,31 @@ function get_link(){
 
     
 }
+
+async function add_plan(){
+    let id= document.getElementById("options").value;
+    let monday = document.getElementById("monday").value;
+let tuesday = document.getElementById("tuesday").value;
+let wednesday = document.getElementById("wednesday").value;
+let thursday = document.getElementById("thursday").value;
+let friday = document.getElementById("friday").value;
+let saturday = document.getElementById("saturday").value;
+let sunday = document.getElementById("sunday").value;
+    console.log(monday);
+    const response = await fetch("/workout/add_plan",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({  id:id,monday: monday,
+            tuesday: tuesday,
+            wednesday: wednesday,
+            thursday: thursday,
+            friday: friday,
+            saturday: saturday,
+            sunday: sunday})
+    
+    
+    })
+
+}

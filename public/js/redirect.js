@@ -37,3 +37,15 @@ function manage_workout(){
 function send_workout(){
     window.location.href = '/send_workout';
 }
+
+function create_plan(){
+
+    window.location.href = '/create_plan';
+
+}
+
+
+function send_plan(){
+
+    window.location.href = '/send_plan';
+}

@@ -219,6 +219,61 @@ router.post("/delete_workout", async(req,res) =>{
 
 })
 
+
+router.post("/add_plan", async(req,res) =>{
+
+  let {id,monday,tuesday,wednesday,thursday,friday,saturday,sunday}= req.body;
+
+  try{
+    const db = mongo.db("frf");
+    const plans = db.collection("Plans");
+
+    let result = await plans.findOne({c_id:id});
+
+    if(!result){
+      plans.insertOne({
+        c_id: id,
+        monday: monday,
+        tuesday: tuesday,
+        wednesday: wednesday,
+        thursday: thursday,
+        friday: friday,
+        saturday: saturday,
+        sunday: sunday,
+        u_id:req.session.u_id
+      });
+    }
+    else{
+      await plans.updateOne( {c_id:id},
+        {$set:{  monday: monday,
+          tuesday: tuesday,
+          wednesday: wednesday,
+          thursday: thursday,
+          friday: friday,
+          saturday: saturday,
+          sunday: sunday}}
+        );
+      
+    }
+
+    
+
+
+
+    return res.status(200).json({
+      message: "Plan added!",
+    });
+
+}
+  catch(err){
+    console.log(err);
+    return res.status(400).json({
+      message: "Plan not added!",
+    });
+  }
+
+})
+
 module.exports=router;
 
 
