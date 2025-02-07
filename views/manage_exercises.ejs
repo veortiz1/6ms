@@ -27,9 +27,14 @@
         </div>
     </div>
 
+
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
     <br>
 
+
+    <% if(exercises.length==0){ %>
+        <p class="tip">Please add exercise to use this feature!</p>
+    <% } else { %>
 
 
     <div class="table_container">
@@ -78,7 +83,7 @@
 
         
 
-   
+   <% } %>
 
   
 

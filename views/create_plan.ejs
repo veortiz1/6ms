@@ -30,8 +30,13 @@
 
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
 
+
     <br>
     <br>
+
+    <%if(client_count==0 || workout_count==0){%>
+        <p class="tip">Please add a client AND a workout to use this feature</p>
+    <%} else { %>
 
     <p class="tip">Which Client is this plan for?</p>
     <select id="options" name="options">
@@ -103,10 +108,13 @@
 
 <button id="form_button" onclick="add_plan()">Create Plan</button>
 
+<%}%>
+
 
 <br>
 
 <br>
+
 
 
 

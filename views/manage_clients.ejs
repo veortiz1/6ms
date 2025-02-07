@@ -33,6 +33,9 @@
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
     <br>
 
+    <% if(clients.length==0){ %>
+        <p class="tip">Please add client to use this feature!</p>
+    <% } else { %>
 
 
     <div class="table_container">
@@ -81,7 +84,7 @@
 
         
 
-   
+   <% } %>
 
   <script src="/js/clients.js"></script>
 

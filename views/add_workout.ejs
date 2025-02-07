@@ -31,7 +31,7 @@
     <form action="">
         <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
 
-      
+      <% if(exercise_count!=0){%>
 
         <input type="text" placeholder="Enter Workout Name" id="name">
         
@@ -49,6 +49,12 @@
         <button type="button" id="form_button" onclick="add_workout()">Add Workout</button>
 
         <p class="error"></p>
+
+        <%} else {%>
+
+            <p class="tip">Please Add Exercise before creating a workout!</p>
+
+            <%}%>
    
 
 

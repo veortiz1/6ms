@@ -120,7 +120,19 @@ app.get("/add_exercise", async(req,res)=>{
 
 
 app.get("/add_workout", async(req,res)=>{
+  try{
+    const db = mongo.db("frf");
+    const exercises= db.collection("Exercises");
 
+    let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
+
+    let exercise_count= user_exercises.length;
+    res.render("add_workout",{exercises:user_exercises,exercise_count:exercise_count});
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
 
 
  
@@ -253,8 +265,10 @@ app.get("/send_workout",async(req,res) =>{
     const db = mongo.db("frf");
     const Workouts= db.collection("Workouts");
     let workout =await Workouts.find({u_id:req.session.u_id}).toArray();
+    let workout_count=workout.length;
 
-    res.render("send_workout",{workout:workout});
+
+    res.render("send_workout",{workout:workout,workout_count:workout_count});
 
   }
   catch(err){
@@ -274,8 +288,14 @@ app.get("/view_workout",async(req,res) =>{
     const normal_id = new ObjectId(workoutId);
     let workout =await Workouts.findOne({_id:normal_id});
     console.log(workout);
+    if(workout){
+      res.render("view_workout",{workout:workout});
+    }
+    else{
+      res.render("error.ejs");
+    }
 
-    res.render("view_workout",{workout:workout});
+  
 
   }
   catch(err){
@@ -320,9 +340,11 @@ app.get("/create_plan",async(req,res)=>{
 
     let workout =await Workouts.find({u_id:req.session.u_id}).toArray();
     let client =await Clients.find({u_id:req.session.u_id}).toArray();
+    let workout_count=workout.length;
+    let client_count=client.length;
     console.log(workout);
 
-    res.render("create_plan",{workout:workout,client:client});
+    res.render("create_plan",{workout:workout,client:client,workout_count:workout_count,client_count:client_count});
 
   }
   catch(err){
@@ -340,8 +362,13 @@ try{
 
   const Clients= db.collection("Clients");
 
+  const Plans= db.collection("Plans");
+
+
   let client =await Clients.find({u_id:req.session.u_id}).toArray();
-  res.render("send_plan",{client:client});
+  let plan = await Plans.find({u_id:req.session.u_id}).toArray();
+  let plan_count = plan.length;
+  res.render("send_plan",{client:client,plan_count:plan_count});
 
 
 

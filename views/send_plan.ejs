@@ -30,6 +30,12 @@
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
     <br>
     <br>
+    <% if(plan_count==0){%>
+        <p class="tip"> Add a 7-day plan to use this feature!</p>
+
+
+
+    <% } else { %>
 
     <p class="tip">Get link to clients workout plan. Select Client</p>
 
@@ -47,6 +53,9 @@
            <p class="tip">Your Link:</p>
 
            <a class="link" id="link" href="#"></a>
+
+
+           <% }%>
 
 
 

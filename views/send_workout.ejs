@@ -26,8 +26,17 @@
             
         </div>
     </div>
-
     <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
+
+    <% if(workout_count==0) { %>
+
+        <p class="tip">Please Add a workout to use this feature!</p>
+
+     
+
+   <% } else { %>
+
+
     <br>
     <br>
 
@@ -48,6 +57,9 @@
     <a class="link" id="link" href="#"></a>
 
     <p class="tip">Copy the link and send it to your client!</p>
+
+
+    <%}%>
 
 
     <script src="/js/send.js"></script>
