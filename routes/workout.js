@@ -274,6 +274,36 @@ router.post("/add_plan", async(req,res) =>{
 
 })
 
+
+router.post("/update_arr", async(req,res) =>{
+  const db = mongo.db("frf");
+  const workouts = db.collection("Workouts");
+   let {arr,w_id} = req.body;
+
+   try{
+    const db = mongo.db("frf");
+    const workouts = db.collection("Workouts");
+    const workout_id = new ObjectId(w_id);
+    await workouts.updateOne( {_id:workout_id},
+      {$set:{exercises:arr}}
+      );
+
+
+      return res.status(200).json({
+        message: "Order changed!",
+      });
+
+    
+
+   }
+   catch(err){
+    return res.status(400).json({
+      message: "Order Not Changed!",
+    });
+
+   }
+})
+
 module.exports=router;
 
 

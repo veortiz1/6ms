@@ -78,8 +78,32 @@ app.get("/register", async(req,res) =>{
 
 
 app.get("/profile", async(req,res)=>{
+  try{
+    const db = mongo.db("frf");
+    const Clients= db.collection("Clients");
+    const Exercises= db.collection("Exercises");
+    const Workouts = db.collection("Workouts");
 
-  res.render("profile");
+    let client_count = await Clients.find({u_id:req.session.u_id}).toArray();
+    let exercise_count = await Exercises.find({u_id:req.session.u_id}).toArray();
+    let workout_count = await Workouts.find({u_id:req.session.u_id}).toArray();
+    client_count=client_count.length;
+    workout_count=workout_count.length;
+    exercise_count=exercise_count.length;
+    res.render("profile",{exercise_count:exercise_count,client_count:client_count,workout_count:workout_count});
+  
+
+   
+
+  }
+  catch(err){
+    console.log("Error getting exercises for add_workout!" + err);
+  }
+  
+
+
+
+
 })
 
 
@@ -97,17 +121,7 @@ app.get("/add_exercise", async(req,res)=>{
 
 app.get("/add_workout", async(req,res)=>{
 
-  try{
-    const db = mongo.db("frf");
-    const exercises= db.collection("Exercises");
 
-    let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
-    res.render("add_workout",{exercises:user_exercises});
-
-  }
-  catch(err){
-    console.log("Error getting exercises for add_workout!" + err);
-  }
 
  
 })

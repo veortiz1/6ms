@@ -66,6 +66,13 @@
                     <button id="red"   onclick="remove_exercise('<%=i%>','<%=JSON.stringify(workout.exercises)%>','<%=workout._id%>')"><img src="/icons/subtract.png" alt=""></button>
                 </td>
 
+                <td>
+                    <button onclick="move_up('<%=workout._id%>','<%=i%>','<%=workout.exercises.length%>','<%=JSON.stringify(workout.exercises)%>')"><img src="/icons/up.png" alt=""></button>
+                </td>
+                <td>
+                    <button onclick="move_down('<%=workout._id%>','<%=i%>','<%=workout.exercises.length%>','<%=JSON.stringify(workout.exercises)%>')"><img src="/icons/down.png" alt=""></button>
+                </td>
+
         </tr>
 
 
