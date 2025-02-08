@@ -16,6 +16,17 @@ const data = await response.json();
 
 if(!response.ok){
 console.log("Error registering user!");
+if(data.error){
+    document.getElementById("error").style.display="flex";
+    document.getElementById("error").style.color="red";
+    document.getElementById("error").innerText=data.error;
+
+}
+else{
+    document.getElementById("error").style.display="flex";
+    document.getElementById("error").style.color="red";
+    document.getElementById("error").innerText="User exists!";
+}
 }
 else{
 

@@ -49,3 +49,9 @@ function send_plan(){
 
     window.location.href = '/send_plan';
 }
+
+
+function register(){
+
+    window.location.href = '/register';
+}
