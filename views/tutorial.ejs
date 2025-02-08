@@ -11,6 +11,112 @@
 </head>
 <body id="send_body">
 
+
+    <div class="top_bar">
+        <a href="/tutorial" class="tutorial" >Tutorial</a>
+
+
+        <div class="top_img">
+            <a href="/profile"><img src="/icons/logo.png" alt="" id="top_bar_logo"> </a>
+        </div>
+      
+            <a href="/logout" class="tutorial" id="tutorial"> Logout</a>
+    </div>
+
+    <button type="button" id="back_button" class="red" onclick="go_back()">Go Back</button>
+
+    <p class="section_title">
+        1. Create Clients
+    </p>
+
+
+
+        <div class="box">
+            <p class="box_title">Add Client</p>
+            <img src="/icons/client.png" alt="">
+            <button onclick="add_client()">+</button>
+        </div>
+
+ 
+
+    
+
+
+        <p class="tip">Click on the +, and create a Client.</p>
+
+
+        <p class="section_title">
+            2. Create Exercises
+        </p>
+
+        <div class="box">
+            <p class="box_title">Add Exercise</p>
+            <img src="/icons/exercise.png" alt="">
+            <button onclick="add_exercise()">+</button>
+        </div>
+
+        <p class="tip">Click on the +, and create an exercise.</p>
+
+        <p class="tip">*NOTE: Create multiple exercises before next step, since workouts contain multiple exercises.</p>
+
+        <p class="section_title">
+            3. Create Workout
+        </p>
+
+        <div class="box">
+            <p class="box_title">Add Workout</p>
+            <img src="/icons/workout.png" alt="">
+            <button onclick="add_workout()">+</button>
+        </div>
+
+        <p class="tip">Click on the +, and create a workout using the exercises you made.</p>
+
+
+
+
+        <p class="section_title">
+            4(Option 1)  Send Workout
+        </p>
+
+        <div class="box">
+            <p class="box_title">Send Workout</p>
+            <img src="/icons/phone.png" alt="">
+            <button onclick="send_workout()">Send</button>
+        </div>
+
+        <p class="tip">Click on Send and then chose the workout you want to send a click get link. Copy the link and send it to your Clients!</p>
+
+
+
+
+        <p class="section_title">
+           4 (Option 2) 7-Day Plan
+           </p>
+
+           <div class="box">
+            <p class="box_title">Create 7-Day Plan</p>
+            <img src="/icons/calendar.png" alt="">
+            <button onclick="create_plan()">+</button>
+        </div>
+
+        <p class="tip">Click on +, and then select the client who you are making the plan for, and the select a workout for each day of the week!</p>
+
+
+        <div class="box">
+            <p class="box_title">Send 7 Day Plan</p>
+            <img src="/icons/mail.png" alt="">
+            <button onclick="send_plan()">Send</button>
+        </div>
+
+        <p class="tip">Click on send, and then choose the client whos plan you are trying to send, then click get link the copy the link and send it to them!</p>
+
+
+
+
+        <br>
+        <br>
+
+    <script src="/js/redirect.js"></script>
     
 </body>
 </html>

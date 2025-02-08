@@ -506,6 +506,11 @@ app.get("/logout",(req,res) =>{
 
 })
 
+app.get("/tutorial",(req,res) =>{
+  res.render("tutorial");
+
+})
+
 
 
 
