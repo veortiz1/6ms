@@ -87,10 +87,7 @@ async function edit_client(){
 
 
     if(response.ok){
-        console.log("client edited!");
-        document.getElementById("error").style.display="flex";
-        document.getElementById("error").innerText="Client edited!";
-        document.getElementById("error").style.color="green";
+        window.location.href = '/manage_client';
     }
     else{
         console.log("not edited!");

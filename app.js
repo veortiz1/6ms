@@ -270,7 +270,14 @@ app.get("/edit_client",async(req,res)=>{
 
 app.get("/delete_client",async(req,res)=>{
 
-  res.render("delete_client",{c_id:req.session.c_id});
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("delete_client",{c_id:req.session.c_id});
+  }
+
+ 
 
 })
 
@@ -280,14 +287,26 @@ app.get("/delete_client",async(req,res)=>{
 
 
 app.get("/edit_exercise",async(req,res) =>{
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("edit_exercise",{e_id:req.session.e_id});
 
-  res.render("edit_exercise",{e_id:req.session.e_id});
+  }
+
 
 })
 
 app.get("/delete_exercise",async(req,res)=>{
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("delete_exercise",{e_id:req.session.e_id});
+  }
 
-  res.render("delete_exercise",{e_id:req.session.e_id});
+
 
 })
 
@@ -297,17 +316,23 @@ app.get("/delete_exercise",async(req,res)=>{
 app.get("/edit_workout",async(req,res) =>{
 
   try{
-    const db = mongo.db("frf");
-    const Workouts= db.collection("Workouts");
-    const exercises= db.collection("Exercises");
-
-    let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
-
-
-    let normal_id = new ObjectId(req.session.w_id);
-    let result = await Workouts.findOne({_id:normal_id});
-    res.render("edit_workout",{workout:result,add_exercise:user_exercises});
-
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
+      const db = mongo.db("frf");
+      const Workouts= db.collection("Workouts");
+      const exercises= db.collection("Exercises");
+  
+      let user_exercises = await exercises.find({u_id:req.session.u_id}).toArray();
+  
+  
+      let normal_id = new ObjectId(req.session.w_id);
+      let result = await Workouts.findOne({_id:normal_id});
+      res.render("edit_workout",{workout:result,add_exercise:user_exercises});
+  
+    }
+  
   }
   catch(err){
     console.log(err);
@@ -319,7 +344,12 @@ app.get("/edit_workout",async(req,res) =>{
 
 
 app.get("/delete_workout",async(req,res) =>{
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
   res.render("delete_workout");
+  }
 
 })
 
@@ -327,6 +357,10 @@ app.get("/delete_workout",async(req,res) =>{
 app.get("/send_workout",async(req,res) =>{
 
   try{
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const Workouts= db.collection("Workouts");
     let workout =await Workouts.find({u_id:req.session.u_id}).toArray();
@@ -334,6 +368,7 @@ app.get("/send_workout",async(req,res) =>{
 
 
     res.render("send_workout",{workout:workout,workout_count:workout_count});
+    }
 
   }
   catch(err){
@@ -348,6 +383,7 @@ app.get("/view_workout",async(req,res) =>{
   let workoutId = req.query.id;
 
   try{
+ 
     const db = mongo.db("frf");
     const Workouts= db.collection("Workouts");
     const normal_id = new ObjectId(workoutId);
@@ -399,6 +435,10 @@ app.get("/view_plan",async(req,res) =>{
 app.get("/create_plan",async(req,res)=>{
 
   try{
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const Workouts= db.collection("Workouts");
     const Clients= db.collection("Clients");
@@ -410,6 +450,7 @@ app.get("/create_plan",async(req,res)=>{
     console.log(workout);
 
     res.render("create_plan",{workout:workout,client:client,workout_count:workout_count,client_count:client_count});
+    }
 
   }
   catch(err){
@@ -423,6 +464,10 @@ app.get("/create_plan",async(req,res)=>{
 app.get("/send_plan", async(req,res) =>{
 
 try{
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
   const db = mongo.db("frf");
 
   const Clients= db.collection("Clients");
@@ -434,6 +479,7 @@ try{
   let plan = await Plans.find({u_id:req.session.u_id}).toArray();
   let plan_count = plan.length;
   res.render("send_plan",{client:client,plan_count:plan_count});
+  }
 
 
 

@@ -29,6 +29,12 @@ function add_exercise_to_workout(id,button_val){
 }
 
 async function add_workout(){
+
+    if(exercises==0){
+        document.getElementById("error").style.display="flex";
+        document.getElementById("error").innerText="Please Select an exercise!";
+        return
+    }
     let name =document.getElementById("name").value;
 
     const response = await fetch("/workout/add",{
