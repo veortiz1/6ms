@@ -29,23 +29,45 @@
 
   .top_bar{
     display: flex;
-  width: 98vw;
+  width: 100%;
+
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
     background-color: black;
+    justify-content: space-between;
+    align-items: center;
   
     padding: 1vw;
 
+ 
   
     margin-bottom: var(--small-margin);
     
   }
 
-  .top_bar_box{
-    width: 33.33%;
+  .tutorial{
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 40%;
+    max-width: 37.5rem;
   }
+ 
+
+  #tutorial{
+    color: red;
+  }
+
+  .top_img{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    max-width: 18.75rem;
+  }
+
 
   #top_bar_logo{
    
@@ -695,20 +717,11 @@
     }
 
   @media (max-width: 800px) {
-  .top_bar{
-    width: 100%;
-  }
-
-  #top_bar_logo{
-    height: 3rem;
-    width: 3rem;
   
-  }
 
-  .top_bar a img{
 
-   width: 2rem;
-  }
+
+  
 
   .top_bar button{
     font-size: .75rem;

@@ -501,6 +501,11 @@ catch(err){
 })
 
 
+app.get("/logout",(req,res) =>{
+  res.render("logout");
+
+})
+
 
 
 
