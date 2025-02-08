@@ -1,9 +1,21 @@
-
+let test=1;
 
 function get_link(){
-    let id=document.getElementById("options").value;
 
-    let link="http://localhost:3000/view_workout?id="+id;
+    
+    let id=document.getElementById("options").value;
+      link="";
+
+      document.getElementById("link_div").style.display="flex";
+
+    if(test==1){
+         link="http://localhost:3000/view_workout?id="+id;
+    }
+    else{
+         link="https://www.firstroundfinish.com/view_workout?id="+id;
+    }
+
+   
 
     document.getElementById("link").innerText=link;
     document.getElementById("link").href=link;
@@ -13,9 +25,17 @@ function get_link(){
 
 
 function get_plan_link(){
+
+    document.getElementById("link_div").style.display="flex";
     let id=document.getElementById("options").value;
 
-    let link="http://localhost:3000/view_plan?id="+id;
+    if(test==1){
+        link="http://localhost:3000/view_plan?id="+id;
+   }
+   else{
+        link="https://www.firstroundfinish.com/view_plan?id="+id;
+   }
+
 
     document.getElementById("link").innerText=link;
     document.getElementById("link").href=link;
@@ -53,5 +73,9 @@ let sunday = document.getElementById("sunday").value;
     
     
     })
+
+    if(response.ok){
+        window.location.href = `/profile`;
+    }
 
 }

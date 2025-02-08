@@ -357,6 +357,7 @@
       font-weight: 400;
       font-style: italic;
       margin: 0;
+      max-width: 43.75rem;
     }
     
 
@@ -659,6 +660,33 @@
     #image_3{
       background-image: url('/img/bg1.jpg'); 
     }
+
+
+    .link_div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      text-align: center;
+      gap:1rem;
+    
+    }
+
+    #red_highlight{
+      font-weight: 700;
+      color:rgb(0, 0, 0);
+   
+    }
+
+    .link_div{
+      display: none;
+    }
+
+    .link{
+      color:   rgb(170, 0, 255);;
+    }
+
+
     @media (max-width: 400px) {
       .home_bar_sections a{
        font-size: .8rem;

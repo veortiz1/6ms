@@ -37,6 +37,11 @@
 
     <% } else { %>
 
+
+    <p class="tip">*NOTE: If you delete a workout that is a clients 7-day plan then it will not show up for the client anymore. E.g if you assigned a workout to monday it will just tell them when they click on monday that the workout has been deleted.</p>
+ <br>
+
+
     <p class="tip">Get link to clients workout plan. Select Client</p>
 
     <select id="options" name="options">
@@ -50,9 +55,21 @@
 
            <button id="form_button" onclick="get_plan_link()">Get Link</button>
 
+           <div class="link_div" id="link_div">
+            <p class="tip" id="red_highlight">***CLICK ON THE LINK TO MAKE SURE YOU HAVE CREATED A PLAN FOR THE USER YOU SELECTED! If it doesnt exist you will be redirected to a sceen that says: "No plan exists for the user you selected please create one!"</p>
+
+
            <p class="tip">Your Link:</p>
 
            <a class="link" id="link" href="#"></a>
+
+           <p class="tip">Copy the link and send it to your client!</p>
+
+<br>
+<br>
+         
+
+        </div>
 
 
            <% }%>

@@ -380,6 +380,7 @@ app.get("/send_workout",async(req,res) =>{
 
 
 app.get("/view_workout",async(req,res) =>{
+  console.log("in view workout");
   let workoutId = req.query.id;
 
   try{
@@ -406,6 +407,7 @@ app.get("/view_workout",async(req,res) =>{
 })
 
 app.get("/view_plan",async(req,res) =>{
+  console.log("in view plan");
   let clientId = req.query.id;
   console.log(clientId);
   try{
@@ -414,11 +416,19 @@ app.get("/view_plan",async(req,res) =>{
     const Plans= db.collection("Plans");
 
     let plan= await Plans.findOne({c_id:clientId});
+    console.log(plan);
+
+    if(plan){
+      
+    res.render("view_plan",{plan:plan});
+    }
+    else{
+      res.render("no_plan");
+    }
 
 
    
 
-    res.render("view_plan",{plan:plan});
 
   }
   catch(err){

@@ -56,9 +56,7 @@ async function edit_exercise(){
 
     if(response.ok){
        
-        document.getElementById("error").style.display="flex";
-        document.getElementById("error").innerText="Exercise edited!";
-        document.getElementById("error").style.color="green";
+        window.location.href = '/manage_exercise';
 
     }
     else{
