@@ -1,7 +1,6 @@
 async function create_client(){
     let name=document.getElementById("name").value;
-   let email = document.getElementById("email").value;
-   let phone = document.getElementById("phone").value;
+   
    let height = document.getElementById("height").value;
    let weight = document.getElementById("weight").value;
 
@@ -13,7 +12,7 @@ async function create_client(){
         headers:{
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({name:name,email:email,phone:phone,height:height,weight:weight})
+        body: JSON.stringify({name:name,height:height,weight:weight})
     
     
     })
@@ -69,8 +68,7 @@ async function set_client_id(id,option){
 
 async function edit_client(){
     let name=document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
+
     let height = document.getElementById("height").value;
     let weight = document.getElementById("weight").value;
     const response = await fetch("/client/edit",{
@@ -78,7 +76,7 @@ async function edit_client(){
         headers:{
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({name:name,email:email,phone:phone,height:height,weight:weight})
+        body: JSON.stringify({name:name,height:height,weight:weight})
     
     
     })

@@ -230,6 +230,7 @@
     justify-content: space-evenly;
     
   }
+  
 
   
 
@@ -671,7 +672,7 @@
       padding: 1rem;
       border-radius: 1rem;
       font-weight: 900;
-      background-color: black;
+      background-color: rgb(29, 216, 60);
       color: white;
       border: none;
       font-family: "Inter", serif;
@@ -737,6 +738,37 @@
     row-gap: .75rem;
     margin-bottom: var(--small-margin);
   }
+
+  .home_images{
+flex-direction: column;
+align-items: center;
+gap: 1rem
+  }
+
+  .home_img{
+    width: 50%;
+  }
+#image_2,#image_3{
+  display: none;
+
+}
+
+.home_images .home_title{
+  display: none;
+}
+
+iframe{
+  margin-top: 1rem;
+ width: 75%;
+ height: 20rem;
+ border-radius: 1rem;
+}
+
+.home_subtitle{
+  font-size: 1.4rem;
+}
+
+  
 
   }
  

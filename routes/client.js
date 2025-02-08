@@ -14,13 +14,11 @@ const { body,check, validationResult } = require('express-validator');
 router.post("/add",
 body("name").notEmpty().withMessage("Please Enter A Name!").
 matches(/^[A-Za-z0-9 ]+$/).withMessage("Name must only contain numbers,letters or spaces!"),
-body("email").optional({ checkFalsy: true }).isEmail().withMessage('Invalid email format'),
-body("phone").optional({ checkFalsy: true }).isInt().withMessage("Please enter only numbers for phone eg.123456677"),
 body("height").optional({ checkFalsy: true }).isFloat().withMessage("Error height must only contain number or decimal!"),
 body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weight must only contain number or decimal!")
 ,async(req,res) =>{
     console.log("In Client Route /add POST");
-    let {name,email,phone,height,weight} = req.body;
+    let {name,height,weight} = req.body;
     const errors = validationResult(req); 
     if (!errors.isEmpty()) {
         console.log("Input validation error!");
@@ -29,25 +27,21 @@ body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weigh
         return res.status(422).json({ error: firstError.msg});
     }   
 
-    if(!email){
-        email="None";
-    }
+   
     if(!weight){
         weight="0";
     }
     if(!height){
         height="0";
     }
-    if(!phone){
-        phone="None";
-    }
+    
 
     
     try{
         const db = mongo.db("frf");
         const clients= db.collection("Clients");
 
-        await clients.insertOne({name:name,email:email,phone:phone,height:height,weight:weight,u_id:req.session.u_id});
+        await clients.insertOne({name:name,height:height,weight:weight,u_id:req.session.u_id});
         return res.status(200).json({
             message: "Client Added!",
           });
@@ -93,14 +87,12 @@ router.post("/edit_id",async(req,res)=>{
 router.post("/edit",
 body("name").optional({checkFalsy:true})
 .matches(/^[A-Za-z0-9 ]+$/).withMessage("Name must only contain numbers,letters or spaces!"),
-body("email").optional({ checkFalsy: true }).isEmail().withMessage('Invalid email format'),
-body("phone").optional({ checkFalsy: true }).isInt().withMessage("Please enter only numbers for phone eg.123456677"),
 body("height").optional({ checkFalsy: true }).isFloat().withMessage("Error height must only contain number or decimal!"),
 body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weight must only contain number or decimal!")
 ,async(req,res) =>{
 
     console.log("in client route /edit ");
-    let {name,email,phone,height,weight} = req.body;
+    let {name,height,weight} = req.body;
     const errors = validationResult(req); 
     if (!errors.isEmpty()) {
         console.log("Input validation error!");
@@ -126,13 +118,7 @@ body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weigh
             console.log("result found");
             if(!name){
                 name=result.name;
-                        }    
-            if(!email){
-                email=result.email;
-            }     
-            if(!phone){
-                phone=result.phone;
-            }   
+                        }      
             if(!height){
                 height=result.height;
             }
@@ -142,7 +128,7 @@ body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weigh
 
 
             await clients.updateOne( {_id:normal_id},
-                {$set:{name:name,email:email,phone:phone,height:height,weight:weight}}
+                {$set:{name:name,height:height,weight:weight}}
                 );
             
         }

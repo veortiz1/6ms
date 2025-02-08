@@ -1,6 +1,15 @@
 async function register(){
    let user= document.getElementById("username").value;
    let password = document.getElementById("password").value;
+   let retype = document.getElementById("verify_password").value;
+
+   if(retype!=password){
+    document.getElementById("error").style.display="flex";
+    document.getElementById("error").style.color="red";
+    document.getElementById("error").innerText="Passwords are not the same!";
+    return;
+
+   }
 
    const response = await fetch("/register",{
     method: "POST",
