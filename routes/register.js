@@ -74,6 +74,50 @@ async(req,res) => {
 
 })
 
+router.post("/login", async(req,res) =>{
+
+    const {user,password} = req.body;
+
+
+
+    try{
+        const db = mongo.db("frf");
+        const users = db.collection("Users");
+
+        let result= await users.findOne({username:user});
+        if(result){
+            const match_passwords = await bcrypt.compare(password, result.password);
+            if(match_passwords){
+                req.session.u_id=result._id;
+             
+                return res.status(200).json({
+                    message: "Match!",
+                  });
+
+            }
+            else{
+                return res.status(400).json({
+                    message: "Password is wrong!",
+                  });
+            }
+
+
+        }
+        else{
+            return res.status(400).json({
+                message: "User doesnt exist!",
+              });
+        }
+
+    }
+    catch(err){
+        console.log(err);
+        return res.status(400).json({
+            message: "Error in registering user",
+          });
+    }
+})
+
 
 
 module.exports=router;

@@ -30,16 +30,16 @@ body("weight").optional({ checkFalsy: true }).isFloat().withMessage("Error weigh
     }   
 
     if(!email){
-        email="no email";
+        email="None";
     }
     if(!weight){
-        weight="no weight!";
+        weight="0";
     }
     if(!height){
-        height="no height";
+        height="0";
     }
     if(!phone){
-        phone="no phone!";
+        phone="None";
     }
 
     

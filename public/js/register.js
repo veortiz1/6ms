@@ -38,3 +38,31 @@ else{
    
 
 }
+
+
+
+async function login(){
+    let user= document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    const response = await fetch("/register/login",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({user:user,password:password})
+    
+    
+    })
+
+    const data = await response.json();
+
+    if(!response.ok){
+        document.getElementById("error").style.display="flex";
+        document.getElementById("error").style.color="red";
+        document.getElementById("error").innerText=data.message;
+    }
+    else{
+        window.location.href = '/profile';
+    }
+    
+}

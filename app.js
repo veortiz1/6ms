@@ -64,10 +64,25 @@ app.get("/", async(req,res) =>{
 
 
 app.get("/register", async(req,res) =>{
+  
+   
+  try{
+  
+    res.render("register");
+
+  }
+  catch(err){
+    console.log(err);
+  }
+
+})
+
+
+app.get("/login", async(req,res) =>{
    
   try{
    
-    res.render("register");
+    res.render("login");
 
   }
   catch(err){
@@ -79,6 +94,12 @@ app.get("/register", async(req,res) =>{
 
 app.get("/profile", async(req,res)=>{
   try{
+
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
+   
     const db = mongo.db("frf");
     const Clients= db.collection("Clients");
     const Exercises= db.collection("Exercises");
@@ -91,6 +112,7 @@ app.get("/profile", async(req,res)=>{
     workout_count=workout_count.length;
     exercise_count=exercise_count.length;
     res.render("profile",{exercise_count:exercise_count,client_count:client_count,workout_count:workout_count});
+  } 
   
 
    
@@ -109,18 +131,36 @@ app.get("/profile", async(req,res)=>{
 
 app.get("/add_client", async(req,res)=>{
 
-  res.render("add_client");
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("add_client");
+  }
+
 })
 
 
 app.get("/add_exercise", async(req,res)=>{
 
-  res.render("add_exercise");
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("add_exercise");
+  }
+  
+
+ 
 })
 
 
 app.get("/add_workout", async(req,res)=>{
   try{
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const exercises= db.collection("Exercises");
 
@@ -128,6 +168,7 @@ app.get("/add_workout", async(req,res)=>{
 
     let exercise_count= user_exercises.length;
     res.render("add_workout",{exercises:user_exercises,exercise_count:exercise_count});
+  }
 
   }
   catch(err){
@@ -141,11 +182,16 @@ app.get("/add_workout", async(req,res)=>{
 app.get("/manage_client", async(req,res)=>{
 
   try{
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const Clients= db.collection("Clients");
 
     let user_clients = await Clients.find({u_id:req.session.u_id}).toArray();
     res.render("manage_clients",{clients:user_clients});
+  }
 
   }
   catch(err){
@@ -161,11 +207,17 @@ app.get("/manage_exercise", async(req,res)=>{
  
 
   try{
+  
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const Exercises= db.collection("Exercises");
 
     let user_exercises= await Exercises.find({u_id:req.session.u_id}).toArray();
     res.render("manage_exercises",{exercises:user_exercises});
+  }
   
 
   }
@@ -178,14 +230,21 @@ app.get("/manage_exercise", async(req,res)=>{
 
 
 app.get("/manage_workout", async(req,res)=>{
+
+
  
 
   try{
+    if(!req.session.u_id){
+      res.render("login");
+    }
+    else{
     const db = mongo.db("frf");
     const Exercises= db.collection("Workouts");
 
     let user_exercises= await Exercises.find({u_id:req.session.u_id}).toArray();
     res.render("manage_workout",{workouts:user_exercises});
+  }
   
 
   }
@@ -198,8 +257,14 @@ app.get("/manage_workout", async(req,res)=>{
 
 
 app.get("/edit_client",async(req,res)=>{
+  if(!req.session.u_id){
+    res.render("login");
+  }
+  else{
+    res.render("edit_client");
+  }
 
-  res.render("edit_client");
+  
 
 })
 
