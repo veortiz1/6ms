@@ -9,157 +9,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Concert+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Kadwa:wght@400;700&family=Keania+One&family=Lacquer&family=Londrina+Solid:wght@100;300;400;900&family=Luckiest+Guy&family=Miriam+Libre:wght@400..700&family=Monda:wght@400..700&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="homepage_img">
 
-    <div class="home_top_bar">
-       <div class="home_bar_sections"><p></p></div>
-       <div class="home_bar_sections"><img src="/icons/logo.png" alt=""></div>
-       <div class="home_bar_sections"> <a href="/login">Login</a>
-        <a href="/register">Register</a>
-    
-    </div>
-    </div>
-
-    <p class="home_title">
-        First Round Finish.
-    </p>
-
-    <p class="home_subtitle">
-        Where clients finish first.
-    </p>
-
-
-    <div class="home_images">
-        <div class="home_img">
-            <p class="home_title" id="white">Clients.</p>
+    <div class="homepage_top">
+        <div class="homepage_left">
+            <p>d</p>
         </div>
 
-        <div class="home_img" id="image_2">
-            <p class="home_title" id="white">Finish.</p>
+        <div class="homepage_middle">
+            <img src="/icons/logo.png" id="homepage_logo" alt="">
         </div>
-
-        <div class="home_img" id="image_3">
-            <p class="home_title" id="white">First.</p>
-        </div>
-
-    </div>
-
-    <p class="home_body">First Round Finish is a cutting-edge platform where boxing trainers create and customize workouts for their clients. Whether training beginners or experienced fighters, coaches can design tailored programs to improve technique, conditioning, and overall performance. The site offers an intuitive interface for trainers to manage workouts, track progress, and keep clients engaged. With First Round Finish, athletes get structured, professional training from skilled coaches, ensuring they’re always fight-ready. Join now, ITS FREE!</p>
-
-
-    <p class="home_title">
-       How does it work?
-    </p>
-
-
-
-
-
-
-  <p class="section_title">
-    1. Create Clients
-</p>
-
-
-
-    <div class="box">
-        <p class="box_title">Add Client</p>
-        <img src="/icons/client.png" alt="">
-      
-    </div>
-
-
-
-
-<br>
-
-    <p class="tip">Create as many clients as you need!</p>
-
-
-    <p class="section_title">
-        2. Create Exercises
-    </p>
-
-    <div class="box">
-        <p class="box_title">Add Exercise</p>
-        <img src="/icons/exercise.png" alt="">
-      
-    </div>
-    <br>
-
-    <p class="tip">Create exercises that anyone can use or make an exercise for a specific client!</p>
-
-
-    <p class="section_title">
-        3. Create Workout
-    </p>
-
-    <div class="box">
-        <p class="box_title">Add Workout</p>
-        <img src="/icons/workout.png" alt="">
-  
-    </div>
-    <br>
-
-    <p class="tip">Create workouts by selecting from all of the exercises YOU made!</p>
-
-
-
-
-    <p class="section_title">
-        4(Option 1)  Send Workout
-    </p>
-
-    <div class="box">
-        <p class="box_title">Send Workout</p>
-        <img src="/icons/phone.png" alt="">
-
-    </div>
-
-    <br>
-    <p class="tip">Choose the INDIVIUAL workout you want to send to your clients!</p>
-
-
-
-
-
-
-    <p class="section_title">
-       4 (Option 2) 7-Day Plan
-       </p>
-
-       <div class="box">
-        <p class="box_title">Create 7-Day Plan</p>
-        <img src="/icons/calendar.png" alt="">
      
+        <div class="login_register_buttons">
+            <button class="homepage_button" onclick="login()">Login</button>
+            <button class="homepage_button" onclick="register()">Register</button>
+        </div>
     </div>
 
-    <br>
+    <p class="homepage_title">FIRST ROUND FINISH</p>
+    <p class="homepage_body">
+        First Round Finish is a cutting-edge platform where boxing trainers create and customize workouts for their clients. Whether training beginners or experienced fighters, coaches can design tailored programs to improve technique, conditioning, and overall performance. The site offers an intuitive interface for trainers to manage workouts, track progress, and keep clients engaged. With First Round Finish, athletes get structured, professional training from skilled coaches, ensuring they’re always fight-ready. Join now, ITS FREE!
+    </p>
 
-    <p class="tip">Choose a client and assign them a workout for each day of the week!</p>
 
-
-    <br>
-    <div class="box">
-        <p class="box_title">Send 7 Day Plan</p>
-        <img src="/icons/mail.png" alt="">
-      
+    <div class="facts">
+        <p>100+ Active Users</p>
+        <p>Send Unlimited Workouts</p>
+        <p>100% Free</p>
     </div>
-    <br>
+    <iframe  src="https://www.youtube.com/embed/2oOCgd9GEiM?si=AGD9cBJzr2T2BZzK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    <p class="tip">Choose which client you want to send their plan to!</p>
+    <button id="joinnow" class="homepage_button" onclick="register()">Join</button>
 
-
-    <br>
-    <br>
-
-
-    <button class="home_button" onclick="register()">Join Now</button>
-
-
-
-
-    
+ 
    
   <script src="/js/redirect.js"></script>
     

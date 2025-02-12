@@ -327,16 +327,17 @@
      td{
        margin: 0;
        padding: 0;
-       font-weight: 900;
+ 
        text-align: center;
   
        max-width: 15ch;
-       font-size: clamp(1rem, 0.75rem + 1.333vw, 2rem);
+     
        padding: .25rem;
        color: rgb(0, 0, 0);
        font-size: 1rem;
        border-top: .1rem solid black;
        font-size: .7rem;
+       font-weight: 900;
      }
    
      td button{
@@ -553,7 +554,7 @@
 
     .home_bar_sections a{
       color: white;
-      text-decoration: 900;
+ 
       font-size: 1rem;
       font-weight: 900;
       text-decoration: none;
@@ -626,6 +627,7 @@
      width: 40rem;
      height: 20rem;
      border-radius: 1rem;
+     border: .2rem solid white;
     }
 
     #registerForm{
@@ -712,12 +714,147 @@
       color:   rgb(170, 0, 255);;
     }
 
+    #homepage_img{
+      background-image: url('/img/homepage.jpg'); 
+      background-size: cover;
+     
+     
+      background-repeat: no-repeat;
+  
+    }
+
+    .homepage_top{
+      align-items: center;
+      margin-top: 1rem;
+      display: flex;
+      width: 95%;
+      max-width: 89.06rem;
+   
+    }
+
+    #homepage_logo{
+      width: 6rem;
+    }
+
+    .homepage_button{
+      font-family: "Inter", serif;
+     
+      background-color: transparent;
+      border: .2rem solid white;
+      color: white;
+      font-weight: 900;
+      padding: .25rem;
+      font-size: clamp(0.7rem, 0.5rem + 1.067vw, 1.5rem);
+
+    }
+
+    .homepage_title{
+    
+  
+      font-weight: 900;
+      margin: 0;
+      color: white;
+      display: flex;
+      width: 100%;
+      align-items: left;
+      max-width: 93.75rem;
+      width: 95%;
+      max-width: 89.06rem;
+      margin-top: 3rem;
+  
+      font-size: clamp(1.75rem, 1.188rem + 3vw, 4rem);
+      
+    }
+
+    .homepage_body{
+     
+      font-weight: 300;
+      display: flex;
+      width: 100%;
+      align-items: left;
+      max-width: 93.75rem;
+      color: white;
+      margin: 0;
+      line-height: 2;
+      width: 95%;
+      max-width: 89.06rem;
+
+      font-size: clamp(0.8rem, 0.625rem + 0.933vw, 1.5rem);
+    }
+
+    .facts{
+      width: 100%;
+      max-width: 93.75rem;
+      display: flex;
+      justify-content: space-between;
+
+      font-weight: 900;
+      color: white;
+      width: 95%;
+      max-width: 89.06rem;
+      flex-wrap: wrap;
+  
+      font-size: clamp(1rem, 0.875rem + 0.667vw, 1.5rem);
+    }
+
+    #joinnow{
+      margin-top: 3rem;
+    font-size: 3rem;
+ 
+    margin-bottom: 3rem;
+    font-size: clamp(1.75rem, 1.438rem + 1.667vw, 3rem);
+ 
+   width:  clamp(10rem, 7.5rem + 13.333vw, 20rem);
+    }
+
+
+    .homepage_left{
+      width: 25%;
+ 
+    }
+    
+    .homepage_middle{
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .login_register_buttons{
+      width: 25%;
+      display: flex;
+      justify-content: space-between;
+    }
+
 
     @media (max-width: 400px) {
       .home_bar_sections a{
        font-size: .8rem;
       }
 
+    }
+
+    @media (max-width:600px){
+      .facts{
+        flex-direction: column;
+      }
+      .homepage_left{
+        width: 40%;
+   
+      }
+      
+      .homepage_middle{
+        width: 20%;
+       
+      }
+      .login_register_buttons{
+        width: 40%;
+        justify-content: space-evenly;
+      }
+
+    #homepage_logo{
+      width: 4rem;
+    }
+
+   
     }
 
   @media (max-width: 800px) {
@@ -762,6 +899,7 @@ iframe{
  width: 75%;
  height: 20rem;
  border-radius: 1rem;
+ 
 }
 
 .home_subtitle{
