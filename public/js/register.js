@@ -10,6 +10,7 @@ async function register(){
     return;
 
    }
+   document.getElementById("registerButton").disabled=true;
 
    const response = await fetch("/register",{
     method: "POST",
@@ -43,6 +44,8 @@ else{
 
 }
 
+
+document.getElementById("registerButton").disabled=false;
 
    
 
